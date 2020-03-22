@@ -1,0 +1,321 @@
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    min-height: 8vh;
+    margin-bottom: 25px;
+    background-color: #222;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    min-height: 8vh;
+    margin-top: 50px;
+    background-color: #222;
+    display: flex;
+}
+footer p {
+    align-self: center;
+    margin: auto;
+    color: white;
+}
+footer a {
+    color: white;
+}
+
+.pizzas {
+    display: flex;
+    justify-content: space-around;
+    min-height: 56vh;    
+}
+
+.pizzas h2 {
+    text-align: center;
+}
+
+.bloc-vide {
+    display: flex;
+    position: relative;
+    margin: 30px auto;
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    z-index: 0;
+    background-color: #9c9ca6;
+}
+
+.ingredients {
+    background-color: #9c9ca6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 25px 0;
+    min-height: 16vh;
+}
+
+.infos-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.new-game-btn {
+    height: 40px;
+    font-size: 1.4em;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.categories {
+    align-self: center;
+}
+
+.check {
+    background-color: green !important;
+}
+
+.score {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: skyblue;
+}
+
+.lose-msg {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: indianred;    
+}
+
+/* =================== */
+
+.pizza-vide {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 50%;
+    background: #ddcba7;
+    border: 1px solid #cf9ca9;
+    z-index: 1;
+}
+
+.tomato {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+    background: #7E080A /* #6D0A0B */;
+    z-index: 2;
+}
+
+.cremeFraiche {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+    background: #fefee2 /* fbfbe5 */;
+    z-index: 2;
+}
+
+.cheese {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+    background: #fbde5a /* #d8b641 */;
+    z-index: 3;
+}
+
+/* --------- */
+
+[class*="element"] {
+    position: absolute; 
+    width: 10%;
+    height: 10%;
+    z-index: 4;
+}
+
+.element1-1 {
+    top: 30%;
+    left: 30%;
+}
+
+.element1-2 {
+    top: 30%;
+    right: 30%;
+}
+
+.element1-3 {
+    top: 45%;
+    left: 45%;
+}
+
+.element1-4 {
+    bottom: 30%;
+    left: 30%;
+}
+
+.element1-5 {
+    bottom: 30%;
+    right: 30%;
+}
+
+.element2-1 {
+    top: 20%;
+    left: 45%;
+}
+
+.element2-2 {
+    right: 20%;
+    top: 45%;
+}
+
+.element2-3 {
+    bottom: 20%;
+    right: 45%;
+}
+
+.element2-4 {
+    left: 20%;
+    bottom: 45%;
+}
+
+/* --------- */
+
+.mushroom {
+    background : url(images/mushroom.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.spinach {
+    background: url(images/spinach.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.olive {
+    background: url(images/olive.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.oignon {
+    background: url(images/onion.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.shrimp {
+    background: url(images/shrimp.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.pepper {
+    background: url(images/pepper.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bacon {
+    background: url(images/bacon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sausage {
+    background: url(images/sausage.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+[class*="element"] + .sausage {
+    width: 20%;
+}
+
+[class*="element"] + .shrimp {
+    width: 15%;
+}
+
+[class*="element"] + .bacon {
+    width: 15%;
+}
+
+/* =========== */
+[class^="box"] {
+    width: 75px;
+    height: 75px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: cadetblue;
+}
+
+.boxtomato {
+    background-image: url(images/boxtomato.svg);
+}
+
+.boxcremeFraiche {
+    background-image: url(images/boxcreme.svg);
+}
+
+.boxcheese {
+    margin-left: 40px;
+    background-image: url(images/boxcheese.svg);
+    background-size: cover;
+}
+
+.boxmushroom {
+    margin-left: 40px;
+    background-image: url(images/mushroom.svg);
+}
+
+.boxspinach {
+    background-image: url(images/spinach.svg);
+    background-repeat: repeat;
+}
+
+.boxolive {
+    background-image: url(images/olive.svg);
+}
+
+.boxoignon {
+    background-image: url(images/boxoignon.svg);
+}
+
+.boxshrimp {
+    margin-left: 40px;
+    background-image: url('images/boxshrimp.svg');
+}
+
+.boxpepper {
+    background-image: url(images/boxpepper.svg);
+    background-repeat: repeat;
+}
+
+.boxbacon {
+    background-image: url(images/boxbacon.svg);
+    background-repeat: repeat;
+}
+
+.boxsausage {
+    background-image: url(images/sausage.svg);
+    background-repeat: repeat;
+}
+
