@@ -2,15 +2,17 @@ body {
     margin: 0;
 }
 
-header {
+.header {
     width: 100%;
     height: 50px;
     min-height: 8vh;
     margin-bottom: 25px;
     background-color: #222;
+    display: flex;
+    justify-content: center;
 }
 
-footer {
+.footer {
     width: 100%;
     height: 50px;
     min-height: 8vh;
@@ -18,12 +20,12 @@ footer {
     background-color: #222;
     display: flex;
 }
-footer p {
+.footer p {
     align-self: center;
     margin: auto;
     color: white;
 }
-footer a {
+.footer a {
     color: white;
 }
 
@@ -259,6 +261,7 @@ footer a {
 }
 
 /* =========== */
+
 [class^="box"] {
     width: 75px;
     height: 75px; 
@@ -317,5 +320,11 @@ footer a {
 .boxsausage {
     background-image: url(images/sausage.svg);
     background-repeat: repeat;
+}
+
+/* =========== */
+
+.timer {
+    color: white;
 }
 

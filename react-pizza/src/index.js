@@ -129,7 +129,7 @@ class Rules extends React.Component {
     render() {
         return ( 
             <div>
-            Prepare pizzas for customers.
+            Prepare pizzas for customers, as much as you can in 30 seconds.
             <br /><br />
             1 - Choose a sauce.
             <br /><br />
@@ -137,7 +137,9 @@ class Rules extends React.Component {
             <br /><br />
             3 - Add Ingredients.
              
-            <p className={this.props.loser ? "lose-msg" : ""}>{this.props.loser ? "You lose, start a new game ;)" : ""}</p>
+            <p className={(this.props.loser || this.props.timeOver || (this.props.timer < 1)) ? "lose-msg" : ""}>{this.props.loser ? "You lose, start a new game ;)" : ""}
+            {(this.props.timeOver || (this.props.timer < 1)) ? "Time Over, good job! Start a new game ;)" : ""}
+            </p>
             </div>
              );
     }
@@ -150,6 +152,31 @@ class Score extends React.Component {
         return (
             <p className={this.props.check ? "score check" : "score"}>
                 Score : {this.props.score}
+            </p>
+        );
+    }
+    
+}
+
+class Footer extends React.Component {
+    
+    render() {
+        return (
+            <p className="footer">Images par <a href="https://pixabay.com/fr/users/OpenClipart-Vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=576462"> OpenClipart-Vectors </a> de <a href="https://pixabay.com/fr/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=576462"> Pixabay</a></p>
+        );
+    }
+    
+}
+
+
+// ===================================
+
+class Timer extends React.Component {
+    
+    render() {
+        return (
+            <p className="timer">
+                00:{(this.props.timer < 10) ? "0" + this.props.timer : this.props.timer}
             </p>
         );
     }
@@ -178,10 +205,28 @@ class Game extends React.Component {
           preparation: ['','','',''],
           score: 0,
           check: false,
-          loser: false 
+          loser: false,
+          start: false,
+          timer: 30,
+          interval: {},
+          timeOver: false
     };
   }
-
+  
+    
+  decrementChrono() {
+      let timer = this.state.timer;
+      
+      if (timer < 1) {
+          return;
+      }
+      timer -= 1;
+      
+      this.setState({
+        timer: timer
+      });
+  }
+    
     /* Click sur une box */
   handleClick(content, groupe) {
 
@@ -190,10 +235,33 @@ class Game extends React.Component {
       let score = this.state.score;
       let check = this.state.check;
       let loser = this.state.loser;
+      let start = this.state.start;
+      let timer = this.state.timer;
+      let interval = this.state.interval;
+      let timeOver = this.state.timeOver;
       
       /* Bloquer si la partie est finie */
       if (gameOver(order, preparation)) {
           return;
+      }
+
+      /* Bloquer si le chrono est écoulé */
+      if (timer < 1) {
+          timeOver = true;
+          this.setState({timeOver: timeOver});
+          return;
+      }
+      
+      /* Lancer le chrono au premier clic */
+      if (start === false){
+          start = true;
+          interval = setInterval(
+              () => (
+                this.decrementChrono()
+              )
+              , 1000);
+          this.setState({start: start,
+                        interval: interval});
       }
       
       /* Empecher le fromage avant la sauce */
@@ -216,10 +284,11 @@ class Game extends React.Component {
       
       /* Defaite ou non */
       if (gameOver(order, preparation)) {
-          console.log('loser');
           loser = true; /* Notice the lose */
+          clearInterval(interval);
           this.setState({
-                  loser: loser
+                  loser: loser,
+                  interval: interval
                 });
           return;
       }
@@ -250,14 +319,20 @@ class Game extends React.Component {
   newGame() {
       
     let order = this.state.order.slice();  
+    let interval = this.state.interval;
 
     order = newOrder();
+    clearInterval(interval);
 
     this.setState({order: order,
                   preparation: ['','','',''],
                   score: 0, 
                   check: false,
-                  loser: false
+                  loser: false,
+                  start: false,
+                  timer: 30,
+                  interval: {},
+                  timeOver: false
                   });
   }    
     
@@ -265,8 +340,15 @@ class Game extends React.Component {
 
 
     return (
-      <div className="game">
-        <div className="pizzas">
+    <div>
+      <header className="header">
+        <Timer
+           timer={this.state.timer}
+        />
+      </header>
+        
+      <main className="game">
+        <section className="pizzas">
             <div>
                 <h2>Order</h2>
                 <div className="bloc-vide">    
@@ -284,6 +366,8 @@ class Game extends React.Component {
                 />
                 <Rules 
                     loser={this.state.loser}
+                    timeOver={this.state.timeOver}
+                    timer={this.state.timer}
                 />
                 <Score 
                     score={this.state.score}
@@ -301,8 +385,8 @@ class Game extends React.Component {
                   />
                 </div>
             </div>
-        </div>
-        <div className="ingredients">
+        </section>
+        <section className="ingredients">
             <div className="categories">
                 <div className="categorie-sauce">
                     <Box 
@@ -366,8 +450,13 @@ class Game extends React.Component {
                     />
                 </div>
             </div>    
-        </div>
-      </div>
+        </section>
+      </main>
+                    
+      <footer className="footer">
+        <Footer />
+      </footer>
+    </div>
     );
   }
 }
@@ -376,7 +465,7 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("main"));
+ReactDOM.render(<Game />, document.getElementById("root"));
 
 // =======================================
 
