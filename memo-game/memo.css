@@ -1,0 +1,139 @@
+/* Memo-game css file */
+
+body {
+    margin: 0;
+}
+
+header {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    background-color: black;
+}
+
+footer {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    background-color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 84vh;
+    padding: 10px
+}
+
+/* ================ */
+
+#infos-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+#level, #best-level {
+    width: 20%;
+    text-align: center;
+}
+
+#new-game-and-timer {
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ================ */
+
+#game-bloc {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#instructions, #message {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#letters-bloc {
+    width: 55%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+/* -------- */
+
+[id^=case] {
+    width: 16%;
+    height: 32%;
+    border: 1px solid black;
+}
+
+/* -------- */
+
+#ready-memorize-btn, #ready-play-btn {
+    height: 30px;
+    width: 100px;
+    margin: auto;
+}
+
+#ready-memorize-btn {
+    display: block;
+}
+
+#ready-play-btn {
+    display: none;
+}
+
+#wait-for-it {
+    display: none;
+}
+
+#go-for-it {
+    display: none;
+}
+
+/* -------- */
+
+#welcome-msg {
+    display: block;
+}
+
+#continue-msg {
+    display: none;
+}
+
+#success-msg {
+    display: none;
+}
+
+#lose-msg {
+    display: none;
+}
+
+#time-over-msg {
+    display: none;
+}
+
+/* ================ */
+
+#infos-bottom {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#infos-bottom p {
+    margin: 5px 0 0 0;
+}
+
