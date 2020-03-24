@@ -1,31 +1,47 @@
 body {
     margin: 0;
+    background-image: url('images/pizza-maker.png');
+    background-size: cover;
 }
 
-header {
+button {
+    cursor: pointer;
+}
+
+.header {
     width: 100%;
     height: 50px;
     min-height: 8vh;
     margin-bottom: 25px;
     background-color: #222;
+    display: flex;
+    justify-content: center;
 }
 
-footer {
+.footer {
     width: 100%;
     height: 50px;
     min-height: 8vh;
     margin-top: 50px;
     background-color: #222;
     display: flex;
+    justify-content: space-around;
 }
-footer p {
+
+.footer p {
     align-self: center;
-    margin: auto;
+    max-height: 25px;
+    margin: 0;
+    font-size: 0.8em;
     color: white;
 }
-footer a {
+
+.footer a {
+    text-decoration: none;
     color: white;
 }
+
+/* --------- */
 
 .pizzas {
     display: flex;
@@ -35,9 +51,16 @@ footer a {
 
 .pizzas h2 {
     text-align: center;
+    margin: 0;
 }
 
-.bloc-vide {
+.order, .preparation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.empty-bloc {
     display: flex;
     position: relative;
     margin: 30px auto;
@@ -45,34 +68,54 @@ footer a {
     height: 250px;
     border: 2px solid black;
     z-index: 0;
-    background-color: #9c9ca6;
+    background-image: url(images/wood.jpg);
+    box-shadow: 5px 5px #4c3026;
+/*    background-color: #9c9ca6; */
 }
 
+/* --------- */
+
 .ingredients {
-    background-color: #9c9ca6;
+  /*  background-color: #9c9ca6; */
+    background-image: url(images/metal-1.png);
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
-    padding: 25px 0;
+    margin: 0 auto;
+    padding: 15px 0;
     min-height: 16vh;
-}
-
-.infos-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.new-game-btn {
-    height: 40px;
-    font-size: 1.4em;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    border: 1px solid black;
+    box-shadow: 5px 5px black;
 }
 
 .categories {
     align-self: center;
+}
+
+/* --------- */
+
+.rules {
+    display: block;
+    background-image: url(images/metal-2.png);
+    font-weight: 600;
+    color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.new-game-btn {
+    width: 50%;
+    max-width: 100px;
+    height: 40px;
+    font-size: 1em;
+    border: 2px solid #563226;
+    box-shadow: 2px 2px #563226;
+    border-radius: 5px;
+    margin: 10px auto;
+    background-color: #d1b57a;
 }
 
 .check {
@@ -82,17 +125,17 @@ footer a {
 .score {
     text-align: center;
     width: 50%;
-    margin: auto;
-    border: 2px solid blue;
+    margin: 10px auto;
+    border: 2px solid #563226;
     border-radius: 10px;
     padding: 5px;
-    background-color: skyblue;
+    background-color: #d1b57a;
 }
 
 .lose-msg {
     text-align: center;
-    width: 100%;
-    margin-bottom: 0;
+    width: 80%;
+    margin: 5px auto;
     border: 2px solid red;
     border-radius: 15px;
     padding: 10px;
@@ -101,14 +144,14 @@ footer a {
 
 /* =================== */
 
-.pizza-vide {
+.empty-pizza {
     display: flex;
     width: 80%;
     height: 80%;
     margin: auto;
     border-radius: 50%;
     background: #ddcba7;
-    border: 1px solid #cf9ca9;
+    border: 6px solid #d5bb81;
     z-index: 1;
 }
 
@@ -119,6 +162,7 @@ footer a {
     margin: auto;
     border-radius: 50%;
     background: #7E080A /* #6D0A0B */;
+    border: 5px solid #6D0A0B;
     z-index: 2;
 }
 
@@ -129,6 +173,7 @@ footer a {
     margin: auto;
     border-radius: 50%;
     background: #fefee2 /* fbfbe5 */;
+    border: 5px solid #fbfbe5;
     z-index: 2;
 }
 
@@ -139,6 +184,7 @@ footer a {
     margin: auto;
     border-radius: 50%;
     background: #fbde5a /* #d8b641 */;
+    border: 4px solid #d8b641;
     z-index: 3;
 }
 
@@ -200,51 +246,42 @@ footer a {
 
 .mushroom {
     background : url(images/mushroom.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .spinach {
     background: url(images/spinach.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .olive {
     background: url(images/olive.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .oignon {
     background: url(images/onion.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .shrimp {
     background: url(images/shrimp.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .pepper {
     background: url(images/pepper.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .bacon {
     background: url(images/bacon.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .sausage {
     background: url(images/sausage.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
+
+.mushroom, .spinach, .olive, .oignon, .shrimp, .pepper, .bacon, .sausage {
+    background-size: contain;
+    background-repeat: no-repeat;    
+}
+
+/* --------- */
 
 [class*="element"] + .sausage {
     width: 20%;
@@ -259,26 +296,36 @@ footer a {
 }
 
 /* =========== */
+
 [class^="box"] {
     width: 75px;
     height: 75px; 
-    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: cadetblue;
+    box-shadow: 5px 3px #74727d;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #74727d;
 }
 
 .boxtomato {
     background-image: url(images/boxtomato.svg);
+    background-size: 80%;
 }
 
 .boxcremeFraiche {
     background-image: url(images/boxcreme.svg);
+    background-size: 80%;
 }
 
 .boxcheese {
     margin-left: 40px;
     background-image: url(images/boxcheese.svg);
-    background-size: cover;
+    background-size: 140%;
+    background-position: left bottom;
+    background-origin: content-box;
+    padding-left: 10px;
 }
 
 .boxmushroom {
@@ -288,34 +335,74 @@ footer a {
 
 .boxspinach {
     background-image: url(images/spinach.svg);
-    background-repeat: repeat;
 }
 
 .boxolive {
     background-image: url(images/olive.svg);
+    background-size: 50%;
 }
 
 .boxoignon {
     background-image: url(images/boxoignon.svg);
+    background-size: 70%;
 }
 
 .boxshrimp {
     margin-left: 40px;
     background-image: url('images/boxshrimp.svg');
+    background-size: 75%;
 }
 
 .boxpepper {
     background-image: url(images/boxpepper.svg);
-    background-repeat: repeat;
+    background-size: 110%;
 }
 
 .boxbacon {
     background-image: url(images/boxbacon.svg);
-    background-repeat: repeat;
+    background-size: 110%;
 }
 
 .boxsausage {
     background-image: url(images/sausage.svg);
-    background-repeat: repeat;
+    background-size: 110%;
 }
 
+/* =========== */
+
+.timer {
+    color: white;
+    font-size: 1.2em;
+}
+
+.best-score {
+    color: white;
+    font-size: 1.2em; 
+    margin-left: 30px;
+}
+
+/* =========== */
+
+@media (max-width: 740px) {
+    .empty-bloc {
+        width: 200px;
+        height: 200px;
+    }
+    .rules {
+        font-size: 0.9em;
+    }
+    [class^="box"] {
+        width: 55px;
+        height: 55px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .empty-bloc {
+        width: 175px;
+        height: 175px;
+    }
+    .rules {
+        font-size: 0.8em;
+    }
+}
