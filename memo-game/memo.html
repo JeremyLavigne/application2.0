@@ -29,7 +29,7 @@
             
             <section id="infos-top">
                 
-                <p id="level">Level : <span id="level-number"> 0 </span></p>
+                <p id="level">Level : <span id="level-number"> 1 </span></p>
                     
                 <div id="new-game-and-timer">
                         
@@ -39,7 +39,7 @@
                     
                 </div>
                     
-                <p id="best-level">Higher level : <span id="best-level-number"> 0 </span></p>  
+                <p id="best-level"> Current Record : <span id="best-level-number"> 1 </span></p>  
                 
             </section>
             
@@ -51,32 +51,33 @@
                     
                     <p id="wait-for-it">Wait for it...</p>
                     
-                    <button id="ready-play-btn">Ready to Play</button>
-                    
                     <p id="go-for-it">Go for it!</p>
+                    
+                    <p id="user-input">Your proposition : <br/><br/>
+                    <span id="user-input-letter"></span></p>
                     
                 </div>
                 
                 <div id="letters-bloc">
                     
-                    <div id="case1"></div>
-                    <div id="case2"></div>
-                    <div id="case3"></div>
-                    <div id="case4"></div>
-                    <div id="case5"></div>
-                    <div id="case6"></div>
-                    <div id="case7"></div>
-                    <div id="case8"></div>
-                    <div id="case9"></div>
-                    <div id="case10"></div>
-                    <div id="case11"></div>
-                    <div id="case12"></div>
-                    <div id="case13"></div>
-                    <div id="case14"></div>
-                    <div id="case15"></div>
-                    <div id="case16"></div>
-                    <div id="case17"></div>
-                    <div id="case18"></div>
+                    <div id="box1"></div>
+                    <div id="box2"></div>
+                    <div id="box3"></div>
+                    <div id="box4"></div>
+                    <div id="box5"></div>
+                    <div id="box6"></div>
+                    <div id="box7"></div>
+                    <div id="box8"></div>
+                    <div id="box9"></div>
+                    <div id="box10"></div>
+                    <div id="box11"></div>
+                    <div id="box12"></div>
+                    <div id="box13"></div>
+                    <div id="box14"></div>
+                    <div id="box15"></div>
+                    <div id="box16"></div>
+                    <div id="box17"></div>
+                    <div id="box18"></div>
                 
                 </div>
                 
@@ -86,20 +87,24 @@
                         Welcome! Click on the left button when you are ready to memorize.
                     </p>
                     
+                    <p id="concentration-msg">
+                        Stay Focused!
+                    </p>
+                    
                     <p id="continue-msg">
-                        Now you have to type same letters, in <em>the same order</em>. Click on the left button when you are ready.
+                        Now you have to type same letters, in <em>the same order</em>.
                     </p>
                     
                     <p id="success-msg">
                         Well played! You raise one level : one letter more. Click on the left button when you are ready to memorize.
                     </p>
                     
-                    <p id="lose-msg">
+                    <p id="defeat-msg">
                         Wrong! Try again, you can do better!
                     </p>
                     
-                    <p id="time-over-msg">
-                        Time is over! Try again, you can do faster!
+                    <p id="good-letter-msg">
+                        Good One!
                     </p>
                     
                 </div>
@@ -118,8 +123,7 @@
             <p>Build by Jeremy Lavigne</p>
         </footer>
         
-        <script type="text/javascript" href="memo.js"></script>
-        
+        <script type="text/javascript" src="memo.js"></script>
     </body>
     
 </html>

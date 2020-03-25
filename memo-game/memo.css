@@ -72,33 +72,24 @@ main {
 
 /* -------- */
 
-[id^=case] {
+[id^=box] {
     width: 16%;
     height: 32%;
     border: 1px solid black;
+    font-size: 2.5em;
+    text-align: center;
 }
 
 /* -------- */
 
-#ready-memorize-btn, #ready-play-btn {
+#ready-memorize-btn {
     height: 30px;
     width: 100px;
     margin: auto;
-}
-
-#ready-memorize-btn {
     display: block;
 }
 
-#ready-play-btn {
-    display: none;
-}
-
-#wait-for-it {
-    display: none;
-}
-
-#go-for-it {
+#wait-for-it, #go-for-it, #user-input {
     display: none;
 }
 
@@ -108,19 +99,7 @@ main {
     display: block;
 }
 
-#continue-msg {
-    display: none;
-}
-
-#success-msg {
-    display: none;
-}
-
-#lose-msg {
-    display: none;
-}
-
-#time-over-msg {
+#continue-msg, #concentration-msg, #success-msg, #defeat-msg, #good-letter-msg {
     display: none;
 }
 
