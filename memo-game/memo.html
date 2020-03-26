@@ -22,7 +22,7 @@
     <body>
         
         <header>
-        
+            <p>Just some letters to memorize. Easy? Don't be so sure.</p>
         </header>
       
         <main>
@@ -30,16 +30,10 @@
             <section id="infos-top">
                 
                 <p id="level">Level : <span id="level-number"> 1 </span></p>
-                    
-                <div id="new-game-and-timer">
                         
-                    <button id="new-game-btn">New Game</button>
-                        
-                    <p id="timer">00:<span id="timer-seconds">00</span></p>
+                <button id="new-game-btn">Restart</button>
                     
-                </div>
-                    
-                <p id="best-level"> Current Record : <span id="best-level-number"> 1 </span></p>  
+                <p id="best-level"> Best : <span id="best-level-number"> 1 </span></p>  
                 
             </section>
             
@@ -47,14 +41,19 @@
                 
                 <div id="instructions">
                     
-                    <button id="ready-memorize-btn">Ready to Memorize</button>
+                    <button id="ready-memorize-btn">Memorize</button>
                     
                     <p id="wait-for-it">Wait for it...</p>
                     
                     <p id="go-for-it">Go for it!</p>
                     
-                    <p id="user-input">Your proposition : <br/><br/>
+                    <p id="just-type">Just type on your keyboard ;)</p>
+                    
+                    <p id="user-input"> =>
                     <span id="user-input-letter"></span></p>
+                    
+                    <p id="incredible">You are amazing</p>
+                    
                     
                 </div>
                 
@@ -84,7 +83,7 @@
                 <div id="message">
                 
                     <p id="welcome-msg">
-                        Welcome! Click on the left button when you are ready to memorize.
+                        Welcome! <br><br> Three letters to begin. <br><br> Click when you are ready.
                     </p>
                     
                     <p id="concentration-msg">
@@ -92,20 +91,27 @@
                     </p>
                     
                     <p id="continue-msg">
-                        Now you have to type same letters, in <em>the same order</em>.
+                        Type now letters, in <em>the order of appearance</em>.
                     </p>
                     
                     <p id="success-msg">
-                        Well played! You raise one level : one letter more. Click on the left button when you are ready to memorize.
+                        Well played! <br><br> You raise one level : one letter more. <br><br> Click when you are ready.
+                    </p>
+                    
+                    <p id="ultimate-win-msg">
+                        Incredible! <br><br> Nobody did it before. <br><br> Take a picture and hire me ;).
                     </p>
                     
                     <p id="defeat-msg">
-                        Wrong! Try again, you can do better!
+                        Wrong! Do not be sad and try again!
                     </p>
                     
                     <p id="good-letter-msg">
                         Good One!
                     </p>
+                    
+                    <p id="answer-msg">Answer was : <br/>
+                    <span id="answer-msg-letters"></span></p>
                     
                 </div>
             
@@ -113,8 +119,8 @@
             
             <section id="infos-bottom">
             
-                <p>Memorize and type letters.</p>
-                <p>Memory, focus and speed are the keys!</p>
+                <p>Memory and focus are the keys!</p>
+                
             </section>        
             
         </main>
@@ -123,7 +129,7 @@
             <p>Build by Jeremy Lavigne</p>
         </footer>
         
-        <script type="text/javascript" src="memo.js"></script>
+        <script src="memo.js"></script>
     </body>
     
 </html>
