@@ -1,1 +1,135 @@
 <!-- Memo game page -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Game create by myself to test my new skills on Javascript"
+        />
+
+        <title>Memo Game</title>
+        
+        <link rel="stylesheet" href="memo.css">
+        
+    </head>
+    
+    <body>
+        
+        <header>
+            <p>Just some letters to memorize. Easy? Don't be so sure.</p>
+        </header>
+      
+        <main>
+            
+            <section id="infos-top">
+                
+                <p id="level">Level : <span id="level-number"> 1 </span></p>
+                        
+                <button id="new-game-btn">Restart</button>
+                    
+                <p id="best-level"> Best : <span id="best-level-number"> 1 </span></p>  
+                
+            </section>
+            
+            <section id="game-bloc">
+                
+                <div id="instructions">
+                    
+                    <button id="ready-memorize-btn">Memorize</button>
+                    
+                    <p id="wait-for-it">Wait for it...</p>
+                    
+                    <p id="go-for-it">Go for it!</p>
+                    
+                    <p id="just-type">Just type on your keyboard ;)</p>
+                    
+                    <p id="user-input"> =>
+                    <span id="user-input-letter"></span></p>
+                    
+                    <p id="incredible">You are amazing</p>
+                    
+                    
+                </div>
+                
+                <div id="letters-bloc">
+                    
+                    <div id="box1"></div>
+                    <div id="box2"></div>
+                    <div id="box3"></div>
+                    <div id="box4"></div>
+                    <div id="box5"></div>
+                    <div id="box6"></div>
+                    <div id="box7"></div>
+                    <div id="box8"></div>
+                    <div id="box9"></div>
+                    <div id="box10"></div>
+                    <div id="box11"></div>
+                    <div id="box12"></div>
+                    <div id="box13"></div>
+                    <div id="box14"></div>
+                    <div id="box15"></div>
+                    <div id="box16"></div>
+                    <div id="box17"></div>
+                    <div id="box18"></div>
+                
+                </div>
+                
+                <div id="message">
+                
+                    <p id="welcome-msg">
+                        Welcome! <br><br> Three letters to begin. <br><br> Click when you are ready.
+                    </p>
+                    
+                    <p id="concentration-msg">
+                        Stay Focused!
+                    </p>
+                    
+                    <p id="continue-msg">
+                        Type now letters, in <em>the order of appearance</em>.
+                    </p>
+                    
+                    <p id="success-msg">
+                        Well played! <br><br> You raise one level : one letter more. <br><br> Click when you are ready.
+                    </p>
+                    
+                    <p id="ultimate-win-msg">
+                        Incredible! <br><br> Nobody did it before. <br><br> Take a picture and hire me ;).
+                    </p>
+                    
+                    <p id="defeat-msg">
+                        Wrong! Do not be sad and try again!
+                    </p>
+                    
+                    <p id="good-letter-msg">
+                        Good One!
+                    </p>
+                    
+                    <p id="answer-msg">Answer was : <br/>
+                    <span id="answer-msg-letters"></span></p>
+                    
+                </div>
+            
+            </section>
+            
+            <section id="infos-bottom">
+            
+                <p>Memory and focus are the keys!</p>
+                
+            </section>        
+            
+        </main>
+        
+        <footer>
+            <p>Build by Jeremy Lavigne</p>
+        </footer>
+        
+        <script src="memo.js"></script>
+    </body>
+    
+</html>

@@ -1,0 +1,182 @@
+/* Memo-game css file */
+
+body {
+    margin: 0;
+    background-image: url(images/labyrinth.png);
+    background-size: cover;
+    background-position: top;
+}
+
+header, footer {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    text-align: center;
+}
+
+header p, footer p {
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 84vh;
+    padding: 10px;
+}
+
+/* ================ */
+
+#infos-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+#level, #best-level {
+    width: 15%;
+    text-align: center;
+    border: 2px solid #a8a6a4;
+    background-color: #e6e2d7;
+    border-radius: 10px;
+}
+
+#new-game-btn, #ready-memorize-btn {
+    background-color: #a8a6a4;
+    box-shadow: 3px 3px #b9b7b5;
+    border: #848281;
+    border-radius: 50%;
+    width: 100px;
+    height: 40px;
+    font-size: 1.1em;
+    color: white;
+}
+
+/* ================ */
+
+#game-bloc {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#instructions, #message {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.1em;
+}
+
+#letters-bloc {
+    width: 55%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 5px solid #a8a6a4;
+    border-radius: 50px;
+}
+
+[id^=box] {
+    width: 16%;
+    height: 33%;
+    font-size: 2.4em;
+    text-align: center;
+}
+
+/* -------- */
+
+#ready-memorize-btn {
+    margin: auto;
+    display: block;
+}
+
+#wait-for-it, #go-for-it, #user-input, #incredible {
+    font-size: 1.2em;
+    display: none;
+}
+
+#just-type {
+    display: none;
+}
+
+#user-input {
+    background-color: white;
+    border: 2px solid #a8a6a4;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+/* -------- */
+
+#welcome-msg, #continue-msg, #concentration-msg, #success-msg, #defeat-msg, #good-letter-msg, #answer-msg, #ultimate-win-msg {
+    display: block;
+    background-color: #e6e2d7;
+    box-shadow: 5px 5px #b9b7b5;
+    border: #848281;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+#good-letter-msg, success-msg, answer-msg, #ultimate-win-msg {
+    background-color: #4eaed2;
+    color: white;
+}
+
+#defeat-msg {
+    background-color: #782222;
+    color: white;
+}
+
+#welcome-msg {
+    display: block;
+}
+
+#continue-msg, #concentration-msg, #success-msg, #defeat-msg, #good-letter-msg, #answer-msg, #ultimate-win-msg {
+    display: none;
+}
+
+#answer-msg-letters {
+    color: #4eaed2;
+}
+
+/* -------- */
+
+#infos-bottom {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    color: #20299e;
+    font-size: 1.3em;
+}
+
+/* ================ */
+
+
+@media (max-width : 600px) {
+    #game-bloc {
+        width: 95%;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+    #letters-bloc {
+        width: 95%;
+        margin-top: 10px;
+    }
+    #message, #instructions {
+        width: 55%;
+        margin-top: 10px;
+    }
+    [id^=box] {
+        height: 100px;
+    }
+}
