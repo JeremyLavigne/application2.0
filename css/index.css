@@ -1,1 +1,149 @@
-/* Main css file */
+/* ============== Disposition =============== */
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    min-height: 84vh;
+    
+    /* position when just one div (smartphone)  
+    justify-content: flex-end; */
+    justify-content: space-around;
+    
+    background-image: url(../images/background-main.png);
+    background-position: top left;
+    background-size: cover;
+}
+
+/* ----------- header - footer ----------- */
+
+header, footer {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    text-align: center;
+}
+
+header p, footer p {
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+
+footer a, footer a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* ============ smartphone ============ */
+/* Choice : fixed size (px) */
+
+#smartphone {
+    display: flex;
+  /*  margin-right: 20%; */
+ 
+/* Do not change size whitout changing screen size */
+    width: 350px;
+    height: 700px;
+    
+    background-image: url(../images/iphone.svg);
+    background-size: cover;
+}
+
+/* ----------- screen ------------ */
+
+#smartphone-screen {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    
+/* Do not change size whitout changing smartphone size */   
+    width: 268px;
+    height: 475px;
+    
+    background-image: url(../images/stockholm.jpg);
+    background-size: cover;
+    
+    border: 1px solid black;
+}
+
+#app-top-bloc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#app-top-bloc [id^="app-number"] {
+/* Do not change size whitout changing smartphone (+screen) size */ 
+    width: 78px;
+    height: 78px;
+    
+    margin: 5px;
+    
+    border-radius: 5px;
+    background-color: red;
+}
+
+#app-bottom-bloc {
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+#app-bottom-bloc [id^="app-number"] {
+/* Do not change size whitout changing smartphone (+screen) size */ 
+    width: 56px;
+    height: 56px;
+    
+    margin: 5px;
+    
+    border-radius: 5px;
+    background-color: red;
+}
+
+
+/* ----------- opened app ------------ */
+
+#opened-app {
+    width: 500px;
+    height: 500px;
+    margin: 100px 10px;
+    
+    background-color: #205eac;
+    border: 2px solid black;
+    
+    border-radius: 10px;
+    
+}
+
+
+
+
+/* ============== Transitions =============== */
+
+[id^="app-number"] {
+    transition: transform 0.5s;
+}
+
+[id^="app-number"]:hover {
+    transform: scale(1.2);
+}
+
+
+/* ============== Responsive part =============== */
+
+@media (max-width: 950px) {
+    #opened-app {
+        width: 400px;
+        height: 400px;
+    }  
+}
+
+/* 750 px : limite for change size */
+@media (max-width: 750px) {
+
+    /* Resize smartphone when open box */
+}
