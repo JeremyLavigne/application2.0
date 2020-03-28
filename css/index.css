@@ -1,1 +1,264 @@
-/* Main css file */
+/* ============== Disposition =============== */
+
+body {
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    min-height: 84vh;
+    
+    padding-left: 10px;
+    
+    /* If smartphone alone */
+    justify-content: flex-end;
+    
+    background-image: url(../images/background-main.png);
+    background-position: top left;
+    background-size: cover;
+}
+
+/* ----------- header - footer ----------- */
+
+header, footer {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    text-align: center;
+}
+
+header p, footer p {
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+
+footer a, footer a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* --------- smartphone ----------- */
+/* Choice : fixed size (px) */
+
+#smartphone {
+    display: flex;
+ 
+/* 50% must not be < 350px (body < 700) */
+    width: 50%;
+    height: 700px;
+    
+    background-image: url(../images/iphone.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* ----------- screen ------------ */
+
+#smartphone-screen {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    
+/* Do not change size whitout changing smartphone size */   
+    width: 268px;
+    height: 475px;
+    
+    background-image: url(../images/stockholm.jpg);
+    background-size: cover;
+    
+    border: 1px solid black;
+}
+
+#app-top-bloc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[id^="app-number"] {
+/* Do not change size whitout changing smartphone (+screen) size */ 
+    width: 70px;
+    height: 70px;
+    
+    margin: 9px;
+    
+    border-radius: 5px;
+}
+
+#app-number1 {
+    background-color: aliceblue;
+}
+#app-number2 {
+    background-color: navajowhite;
+}
+#app-number3 {
+    background-color: firebrick;
+}
+#app-number4 {
+    background-color: khaki;
+}
+#app-number5 {
+    background-color: lawngreen;
+}
+#app-number6 {
+    background-color: darkturquoise;
+}
+#app-number7 {
+    background-color: fuchsia;
+}
+#app-number8 {
+    background-color: peru;
+}
+#app-number9 {
+    background-color: rebeccapurple;
+}
+
+/* bottom bloc */
+
+#app-bottom-bloc {
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+[id^="link-number"] {
+/* Do not change size whitout changing smartphone (+screen) size */ 
+    width: 56px;
+    height: 56px;
+    
+    margin: 5px;
+    
+    border-radius: 5px;
+    background-color: green;
+    
+    transition: transform 0.6s;
+}
+
+[id^="link-number"]:hover {
+    transform: scale(1.15);
+    cursor: pointer; 
+}
+
+/* ----------- opened app ------------ */
+
+#opened-app {
+    width: 50%;
+    display: none;
+}
+
+[id^="app-box-number"] {
+    width: 500px;
+    height: 500px;
+    margin: 100px auto;
+
+    border: 2px solid black;
+    
+    border-radius: 10px;
+    
+    background-position: top;
+    display: none;
+}
+
+#app-box-number1 {
+    background-color: aliceblue;
+}
+#app-box-number2 {
+    background-color: navajowhite;
+}
+#app-box-number3 {
+    background-color: firebrick;
+}
+#app-box-number4 {
+    background-color: khaki;
+}
+#app-box-number5 {
+    background-color: lawngreen;
+}
+#app-box-number6 {
+    background-color: darkturquoise;
+}
+#app-box-number7 {
+    background-color: fuchsia;
+}
+#app-box-number8 {
+    background-color: peru;
+}
+#app-box-number9 {
+    background-color: rebeccapurple;
+}
+
+
+
+/* ============== Animations =============== */
+
+@keyframes moveIcon {
+    33% {
+       transform: rotate(-5deg); 
+    }
+    100% {
+       transform: rotate(5deg); 
+    }
+}
+
+@keyframes hideIcon {
+    100% {
+       transform: rotateY(180deg) scale(0); 
+    }
+}
+
+@keyframes showIcon {
+    0% {
+        transform: scale(0.01);
+    }
+    100% {
+        transform: scale(1) rotateY(180deg) ; 
+    }
+}
+
+@keyframes showBox {
+    0% {
+        transform: scale(0.01);
+    }
+    100% {
+        transform: scale(1) rotateY(180deg) ; 
+    }
+}
+
+@keyframes hideBox {
+    100% {
+        transform: scale(0.01) rotateY(180deg) ; 
+    }
+}
+
+
+[id^="app-number"]:hover {
+    animation: moveIcon 1s infinite alternate ; 
+    cursor: pointer; 
+}
+
+
+
+
+/* ============== Responsive part =============== */
+
+@media (max-width: 955px) {
+    [id^="app-box-number"] {
+        width: 400px;
+        height: 400px;
+    }  
+}
+
+@media (max-width: 785px) {
+    #main {
+        background-image: url("../images/white.png");
+    }
+    #smartphone {
+        width: 100%;
+    }
+    #opened-app {
+        width: 100%;
+    }
+    /* Open box manage with JS */
+}
