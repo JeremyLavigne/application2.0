@@ -4,13 +4,14 @@ body {
     margin: 0;
 }
 
-main {
+#main {
     display: flex;
     min-height: 84vh;
     
-    /* position when just one div (smartphone)  
-    justify-content: flex-end; */
-    justify-content: space-around;
+    padding-left: 10px;
+    
+    /* If smartphone alone */
+    justify-content: flex-end;
     
     background-image: url(../images/background-main.png);
     background-position: top left;
@@ -39,19 +40,19 @@ footer a, footer a:visited {
     text-decoration: none;
 }
 
-/* ============ smartphone ============ */
+/* --------- smartphone ----------- */
 /* Choice : fixed size (px) */
 
 #smartphone {
     display: flex;
-  /*  margin-right: 20%; */
  
-/* Do not change size whitout changing screen size */
-    width: 350px;
+/* 50% must not be < 350px (body < 700) */
+    width: 50%;
     height: 700px;
     
     background-image: url(../images/iphone.svg);
-    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
 }
 
 /* ----------- screen ------------ */
@@ -77,23 +78,52 @@ footer a, footer a:visited {
     flex-wrap: wrap;
 }
 
-#app-top-bloc [id^="app-number"] {
+[id^="app-number"] {
 /* Do not change size whitout changing smartphone (+screen) size */ 
-    width: 78px;
-    height: 78px;
+    width: 70px;
+    height: 70px;
     
-    margin: 5px;
+    margin: 9px;
     
     border-radius: 5px;
-    background-color: red;
 }
+
+#app-number1 {
+    background-color: aliceblue;
+}
+#app-number2 {
+    background-color: navajowhite;
+}
+#app-number3 {
+    background-color: firebrick;
+}
+#app-number4 {
+    background-color: khaki;
+}
+#app-number5 {
+    background-color: lawngreen;
+}
+#app-number6 {
+    background-color: darkturquoise;
+}
+#app-number7 {
+    background-color: fuchsia;
+}
+#app-number8 {
+    background-color: peru;
+}
+#app-number9 {
+    background-color: rebeccapurple;
+}
+
+/* bottom bloc */
 
 #app-bottom-bloc {
     display: flex;
     flex-wrap: nowrap; 
 }
 
-#app-bottom-bloc [id^="app-number"] {
+[id^="link-number"] {
 /* Do not change size whitout changing smartphone (+screen) size */ 
     width: 56px;
     height: 56px;
@@ -101,49 +131,134 @@ footer a, footer a:visited {
     margin: 5px;
     
     border-radius: 5px;
-    background-color: red;
+    background-color: green;
+    
+    transition: transform 0.6s;
 }
 
+[id^="link-number"]:hover {
+    transform: scale(1.15);
+    cursor: pointer; 
+}
 
 /* ----------- opened app ------------ */
 
 #opened-app {
+    width: 50%;
+    display: none;
+}
+
+[id^="app-box-number"] {
     width: 500px;
     height: 500px;
-    margin: 100px 10px;
-    
-    background-color: #205eac;
+    margin: 100px auto;
+
     border: 2px solid black;
     
     border-radius: 10px;
     
+    background-position: top;
+    display: none;
+}
+
+#app-box-number1 {
+    background-color: aliceblue;
+}
+#app-box-number2 {
+    background-color: navajowhite;
+}
+#app-box-number3 {
+    background-color: firebrick;
+}
+#app-box-number4 {
+    background-color: khaki;
+}
+#app-box-number5 {
+    background-color: lawngreen;
+}
+#app-box-number6 {
+    background-color: darkturquoise;
+}
+#app-box-number7 {
+    background-color: fuchsia;
+}
+#app-box-number8 {
+    background-color: peru;
+}
+#app-box-number9 {
+    background-color: rebeccapurple;
 }
 
 
 
+/* ============== Animations =============== */
 
-/* ============== Transitions =============== */
-
-[id^="app-number"] {
-    transition: transform 0.5s;
+@keyframes moveIcon {
+    33% {
+       transform: rotate(-5deg); 
+    }
+    100% {
+       transform: rotate(5deg); 
+    }
 }
+
+@keyframes hideIcon {
+    100% {
+       transform: rotateY(180deg) scale(0); 
+    }
+}
+
+@keyframes showIcon {
+    0% {
+        transform: scale(0.01);
+    }
+    100% {
+        transform: scale(1) rotateY(180deg) ; 
+    }
+}
+
+@keyframes showBox {
+    0% {
+        transform: scale(0.01);
+    }
+    100% {
+        transform: scale(1) rotateY(180deg) ; 
+    }
+}
+
+@keyframes hideBox {
+    100% {
+        transform: scale(0.01) rotateY(180deg) ; 
+    }
+}
+
 
 [id^="app-number"]:hover {
-    transform: scale(1.2);
+    animation: moveIcon 1s infinite alternate ; 
+    cursor: pointer; 
 }
+
+
 
 
 /* ============== Responsive part =============== */
 
-@media (max-width: 950px) {
-    #opened-app {
+@media (max-width: 955px) {
+    [id^="app-box-number"] {
         width: 400px;
         height: 400px;
     }  
 }
 
-/* 750 px : limite for change size */
-@media (max-width: 750px) {
-
-    /* Resize smartphone when open box */
+@media (max-width: 785px) {
+    #main {
+        background-image: url("../images/white.png");
+    }
+    #smartphone {
+        width: 100%;
+    }
+    #opened-app {
+        width: 100%;
+    }
+    /* Open box manage with JS */
 }
