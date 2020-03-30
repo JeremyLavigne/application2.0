@@ -1,7 +1,7 @@
 /* eslint-env es6 */
 /* eslint-env browser */
 
-/* main website js file */
+/* ================== main website js file ============= */
 
 /* ------ Global variables -------- */
 
@@ -19,15 +19,16 @@ allowOpenOthers();
 tinyVue.addListener(isTinyVueWhenBoxOpened);
 
 
-
-
 /* ------ Event click on any app -------- */
 
 function openApp(e) {
     
-    getBoxId(e.target);
+    /* remove poosibity to open others apps */
+    removeOpenOthers();
+    
+    getBoxId(e.currentTarget);
 
-    iconAnimation(e.target);
+    iconAnimation(e.currentTarget);
     
     /* time for (1) avoid a conflict between to click event (shut and open in the same time) and (2) let animation plays */
     
@@ -43,9 +44,6 @@ function openApp(e) {
         boxIsOpen = true;
         
         document.body.addEventListener('click', everywhereExceptHere);  
-        
-        /* remove poosibity to open others apps */
-        removeOpenOthers();
         
     }, 800);
     
@@ -79,7 +77,7 @@ function iconAnimation(target) {
 function boxAnimation() {
     
     document.getElementById(activeBoxId).style.animation = "showBox 1.5s forwards";
-    document.getElementById(activeBoxId).style.display = "block";
+    document.getElementById(activeBoxId).style.display = "flex";
     document.getElementById("opened-app").style.display = "block";
     
 }
@@ -90,28 +88,39 @@ function boxAnimation() {
 
 function everywhereExceptHere(e) {
     
-    if( (e.target !== document.getElementById("app-box"))) {
-        
-        hideBoxAnimation();
-        
-        /* Time (1) to avoid conflict when you go out with a click on the same app (2) let animation */
-        
-        setTimeout(function(){
-            
-            boxIsOpen = false;
-            
-            /* If smartphone was hidden because of @media, get it back now */
-            document.getElementById("smartphone").style.display = "flex";
-            
-            allowOpenOthers();
-            iconBackAnimation();
-            
-            document.body.removeEventListener('click', everywhereExceptHere);  
-            
-        }, 1000);
+    var target = e.target;
+    var activeBox = document.getElementById(activeBoxId);
+   
+    /* Cancel if click is on the box or on one of his children : not so good, but no better idea than test all levels of parent node */
+    
+    while (target.id !== "main") {
+        if (target === activeBox) {
+            return;
+        } else {
+            target = target.parentElement;
+        }
     }
     
+  
+    hideBoxAnimation();
+        
+    /* Time (1) to avoid conflict when you go out with a click on the same app (2) let animation */
+        
+    setTimeout(function(){
+            
+        boxIsOpen = false;
+            
+        /* If smartphone was hidden because of @media, get it back now */
+        document.getElementById("smartphone").style.display = "flex";
+            
+        allowOpenOthers();
+        iconBackAnimation();
+            
+        document.body.removeEventListener('click', everywhereExceptHere);  
+            
+    }, 1000);
 }
+
 
 
 /* ----------- hide app ----------- */
