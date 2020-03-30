@@ -14,16 +14,19 @@
             content="Spontaneous application to a web developer position"
         />
 
-        <title>Spontanansökan</title>
+        <title>Application</title>
         
         <link rel="stylesheet" href="css/index.css">
+        
+        <!-- Fontawesome Icons -->
+        <link rel="stylesheet" href="css/css/all.css"> 
         
     </head>
     
     <body>
         
         <header>
-            <p>Jeremy Lavigne, Front-end Developer Junior</p>
+            <h1>Jeremy Lavigne, Front-end Developer Junior</h1>
         </header>
       
         <main id="main">
@@ -31,40 +34,146 @@
             <section id="opened-app">  
                 
                 <div id="app-box-number1">
-                
+                    
+                    <h2>Video - Resume</h2>
+                    
+                    <video id="scratch-video" controls muted>
+                        <source src="video/movie.mp4" type="video/mp4">
+                        <source src="video/movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="bottom-skills">
+                        <p><a href="https://scratch.mit.edu" target="_blank">Scratch</a></p>
+                    </div>
+                    
                 </div>
                 
                 <div id="app-box-number2">
-                
-                </div>
+                    
+                    <h2>Survey - Prototype</h2>
+                    
+                    <div class="bottom-skills">
+                        <p>ReactJS</p>
+                    </div>
+                    
+                </div><!-- TO DO -->
                 
                 <div id="app-box-number3">
-                
+                    
+                    <h2>Weather</h2>
+                    
+                    <div id="weather">
+                        
+                        <h3 id="weather-name"></h3>
+                        
+                        <div id="stockholm-weather">
+                            
+                            <div id="today-weather">
+
+                                <h3>Today</h3>
+
+                                <p id="weather-temp"></p>
+                                <p id="weather-wind"></p>
+
+                                <img id="weather-cloud" src="#" alt="weather-icon">
+
+                            </div>
+
+                            <div id="tommorow-weather">
+
+                                <h3>Tommorow</h3>
+
+                                <p id="weather-temp2"></p>
+                                <p id="weather-wind2"></p>
+
+                                <img id="weather-cloud2" src="#" alt="weather-icon2">
+
+                            </div>
+                    
+                        </div>    
+                        
+                    </div>
+                    
+                    <div class="bottom-skills">
+                        <p>API Doc</p>
+                    </div>
+                    
                 </div>
                 
                 <div id="app-box-number4">
-                
+                    
+                    <h2>Game - Test your Memory</h2>
+                    
+                    <p>
+                        <a href="memo-game/memo.html" target="_blank">
+                            <img src="memo-game/images/labyrinth.png" alt="pizza-game-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>Javascript</p>
+                    </div>
+                    
                 </div>
                 
                 <div id="app-box-number5">
-                
-                </div>
+                    
+                    <h2>3 months half paid!</h2>
+                     
+                </div><!-- TO DO -->
                 
                 <div id="app-box-number6">
-                
+                    
+                    <h2>Game - Make a pizza</h2>
+                    
+                    <p>
+                        <a href="react-pizza/public/index.html" target="_blank">
+                            <img src="react-pizza/src/images/pizza-maker.png" alt="memo-game-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>ReactJS</p>
+                    </div>
+                    
                 </div>
                 
                 <div id="app-box-number7">
-                
-                </div>
+                    
+                    <h2>Settings</h2>
+                    
+                    <div class="bottom-skills">
+                        <p>Javascript</p>
+                    </div>
+                    
+                </div><!-- TO DO -->
                 
                 <div id="app-box-number8">
-                
+                    
+                    <h2>Website - version 1</h2>
+                    
+                    <p>
+                        <a href="version-1/index.html" target="_blank">
+                            <img src="images/overview-website-v1.png" alt="website-v1-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>HTML/CSS/JS</p>
+                    </div>
+                    
                 </div>
                 
                 <div id="app-box-number9">
-                
-                </div>
+                    
+                    <h2>Rate this website</h2>
+                    
+                    <div class="bottom-skills">
+                        <p>EmailJS</p>
+                    </div>
+                    
+                </div><!-- TO DO -->
                     
             </section>
                 
@@ -74,24 +183,61 @@
 
                     <div id="app-top-bloc">
 
-                        <div id="app-number1"></div>
-                        <div id="app-number2"></div>
-                        <div id="app-number3"></div>
-                        <div id="app-number4"></div>
-                        <div id="app-number5"></div>
-                        <div id="app-number6"></div>
-                        <div id="app-number7"></div>
-                        <div id="app-number8"></div>
-                        <div id="app-number9"></div>
+                        <div id="app-number1">
+                            
+                        </div>
+                        
+                        <div id="app-number2">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        
+                        <div id="app-number3">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        
+                        <div id="app-number4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        
+                        <div id="app-number5">
+                            <i class="fas fa-comment-dollar"></i>
+                        </div>
+                        
+                        <div id="app-number6">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        
+                        <div id="app-number7">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        
+                        <div id="app-number8">
+                            <i class="fas fa-backward"></i>
+                        </div>
+                        
+                        <div id="app-number9">
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
 
                     </div>
 
                     <div id="app-bottom-bloc">
 
-                        <div id="link-number1"></div>
-                        <div id="link-number2"></div>
-                        <div id="link-number3"></div>
-                        <div id="link-number4"></div>
+                        <div id="link-number1">
+                            <i class="fab fa-github-square"></i>
+                        </div>
+                        
+                        <div id="link-number2">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        
+                        <div id="link-number3">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        
+                        <div id="link-number4">
+                            <i class="fas fa-envelope-open"></i>
+                        </div>
 
                     </div>
                         
@@ -102,15 +248,15 @@
         </main>
         
         <footer>
-            <p>Images from <a href="www.pixabay.com"> Pixabay</a></p>
+            <p>Images from <a href="www.pixabay.com"> Pixabay </a></p>
             
             <p>Build by Jeremy Lavigne</p>
             
-            <p>Icons from <a href="#"> ?? </a></p>
-            <!-- fontawesome ? flaticon ? -->
+            <p>Icons from <a href="www.fontawesome.com"> Fontawesome </a></p>
         </footer>
         
         <script src="js/index.js"></script>
+        <script src="js/apps.js"></script>
     </body>
     
 </html>
