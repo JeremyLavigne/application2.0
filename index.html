@@ -21,6 +21,15 @@
         <!-- Fontawesome Icons -->
         <link rel="stylesheet" href="css/css/all.css"> 
         
+        <!-- Use of EmailJs plateform to receive message via the contact form without using backend -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script>
+            (function(){
+                emailjs.init("user_kGCbguYyMwED8htBgBu7M");
+            })();
+        </script>
+        
     </head>
     
     <body>
@@ -119,7 +128,23 @@
                 
                 <div id="app-box-number5">
                     
-                    <h2>3 months half paid!</h2>
+                    <h2>Conditions</h2>
+                    
+                    <div id="interview">
+                    
+                        <div id="question-bloc">
+                            
+                            <div id="bubble"></div>
+                            
+                        </div>
+                        
+                        <div id="answer-bloc">
+                        
+                            <p id="answer"></p>
+                            
+                        </div>
+                        
+                    </div>
                      
                 </div><!-- TO DO -->
                 
@@ -169,11 +194,59 @@
                     
                     <h2>Rate this website</h2>
                     
+                    <p id="thank-you-msg"> Thank you very much ;)</p>
+                    <p id="sent-msg"> &#10004; </p>
+                    
+                    <form id="rating-form">
+                        
+                        <div id="rating-star">
+                            
+                            <p>Idea 
+                                <input type="text" id="idea-rating" name="idea-rating">
+                                <span id="idea-star1">&#9734;</span>
+                                <span id="idea-star2">&#9734;</span>
+                                <span id="idea-star3">&#9734;</span>
+                                <span id="idea-star4">&#9734;</span>
+                                <span id="idea-star5">&#9734;</span>
+                            </p>
+                            
+                            <p>Design 
+                                <input type="text" id="design-rating" name="design-rating">
+                                <span id="design-star1">&#9734;</span>
+                                <span id="design-star2">&#9734;</span>
+                                <span id="design-star3">&#9734;</span>
+                                <span id="design-star4">&#9734;</span>
+                                <span id="design-star5">&#9734;</span>
+                            </p>
+                            
+                            <p>Skills 
+                                <input type="text" id="skills-rating" name="skills-rating">
+                                <span id="skills-star1">&#9734;</span>
+                                <span id="skills-star2">&#9734;</span>
+                                <span id="skills-star3">&#9734;</span>
+                                <span id="skills-star4">&#9734;</span>
+                                <span id="skills-star5">&#9734;</span>
+                            </p>
+                            
+                        </div>
+                        
+                        <div id="rating-advice">
+                            
+                            <textarea type="text" id="user-advice" name="user-advice" placeholder="Any advice? (optional)" maxlength="255"></textarea>
+                            
+                            <br><br>
+                            
+                            <button type="submit" id="sendbutton">Send</button>
+                            
+                        </div>
+                        
+                    </form>
+                    
                     <div class="bottom-skills">
                         <p>EmailJS</p>
                     </div>
                     
-                </div><!-- TO DO -->
+                </div>
                     
             </section>
                 
