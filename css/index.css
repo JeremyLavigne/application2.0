@@ -1,4 +1,12 @@
-/* ============== Main arrangement =============== */
+/* ===================== Main css ======================= */
+
+/* ====================================================== */
+
+
+
+
+/* ===================== Global ======================= */
+
 
 body {
     margin: 0;
@@ -8,6 +16,7 @@ body {
     display: flex;
     min-height: 84vh;
     
+    /* If little width size */
     padding-left: 10px;
     
     /* If smartphone alone */
@@ -25,20 +34,20 @@ header, footer {
     height: 50px;
     min-height: 8vh;
     margin: 0;
+    
     background-color: black;
     display: flex;
     text-align: center;
+    color: white;
 }
 
 header h1 {
-    color: white;
     width: 80%;
     margin: auto;
     font-size: 1em;
 }
 
 footer p {
-    color: white;
     width: 30%;
     margin: auto;
     font-size: 0.8em;
@@ -49,13 +58,13 @@ footer a, footer a:visited {
     text-decoration: none;
 }
 
+
 /* --------- smartphone ----------- */
-/* Choice : fixed size (px) */
 
 #smartphone {
     display: flex;
  
-/* 50% must not be < 350px (body < 700) */
+    /* 50% : must not be < 350px (when body < 700) */
     width: 50%;
     height: 700px;
     
@@ -64,15 +73,13 @@ footer a, footer a:visited {
     background-repeat: no-repeat;
 }
 
-/* ----------- screen ------------ */
-
 #smartphone-screen {
     display: flex;
     margin: auto;
     flex-direction: column;
     justify-content: space-between;
     
-/* Do not change size whitout changing smartphone size */   
+    /* Do not change size whitout changing smartphone size */   
     width: 268px;
     height: 475px;
     
@@ -82,15 +89,21 @@ footer a, footer a:visited {
     border: 1px solid black;
 }
 
+
+
+
+
+
+/* ===================== Apps icons ======================= */
+
 #app-top-bloc {
     display: flex;
     flex-wrap: wrap;
 }
 
-/* ------------------ app icons ------------- */
-
 [id^="app-number"] {
-/* Do not change size whitout changing smartphone (+screen) size */ 
+    
+    /* size in relation with screen size */ 
     width: 60px;
     height: 60px;
     
@@ -101,11 +114,14 @@ footer a, footer a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     font-size: 2.5em ;
     color: white;
 }
 
 #app-number1 {
+    /* different icon for this app */
+    
     width: 63px;
     height: 63px;
     
@@ -116,37 +132,14 @@ footer a, footer a:visited {
     background-repeat: no-repeat;
 }
 
-#app-number2 {
+#app-number2, #app-number4, #app-number6, #app-number8 {
     background-color: dodgerblue;
 }
 
-#app-number3 {
+#app-number3, #app-number5, #app-number7, #app-number9 {
     background-color: #f3aa44;
 }
 
-#app-number4 {
-    background-color: dodgerblue;
-}
-
-#app-number5 {
-    background-color: #f3aa44;
-}
-
-#app-number6 {
-    background-color: dodgerblue;
-}
-
-#app-number7 {
-    background-color: #f3aa44;
-}
-
-#app-number8 {
-    background-color: dodgerblue;
-}
-
-#app-number9 {
-    background-color: #f3aa44;
-}
 
 /* ----- bottom bloc ------- */
 
@@ -156,7 +149,7 @@ footer a, footer a:visited {
 }
 
 [id^="link-number"] {
-/* Do not change size whitout changing smartphone (+screen) size */ 
+    /* size in relation with screen size */ 
     width: 50px;
     height: 50px;
     
@@ -170,19 +163,24 @@ footer a, footer a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     font-size: 3em ;
     color: black;
 }
 
 [id^="link-number"]:hover {
+    
     transform: scale(1.15);
     cursor: pointer; 
+    
 }
 
 
 
 
-/* ----------- opened app ------------ */
+
+
+/* ===================== Apps box - open ======================= */
 
 
 #opened-app {
@@ -191,6 +189,7 @@ footer a, footer a:visited {
 }
 
 [id^="app-box-number"] {
+    
     width: 500px;
     height: 500px;
     margin: auto;
@@ -205,184 +204,28 @@ footer a, footer a:visited {
     justify-content: space-between;
 }
 
-#app-box-number1 {
-    background-color: aliceblue;
-}
-#scratch-video {
-    width: 480px;
-    height: 320px;
-    margin: auto;
-}
-
-
-
-#app-box-number2 {
-    background-color: navajowhite;
-}
-
-
-
-#app-box-number3 {
-    background-color: firebrick;
-}
-#weather {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-}
-#weather-name {
-    font-size: 1.5em;
-    text-decoration: underline;
-}
-#stockholm-weather {
-    display: flex;
-    justify-content: space-around;
-}
-#today-weather {
-    width: 45%;
-    border-right: 1px solid black;
-}
-#tommorow-weather {
-    width: 45%;
-}
-
-
-/* app 4-6-8 */
-#app-box-number4 {
-    background-color: khaki;
-}
-#app-box-number4 p, #app-box-number6 p, #app-box-number8 p {
-    margin: auto;
-}
-#app-box-number4 img, #app-box-number6 img, #app-box-number8 img {
+[id^="app-box-number"] img {
+    
     max-width: 480px;
-    max-height: 320px;
+    max-height: 320px;   
+
 }
 
+[id^="app-box-number"] .contain-img {
+    
+    margin: auto;  
 
-
-#app-box-number5 {
-    background-color: lawngreen;
 }
-#interview {
-    display: flex;
-    justify-content: space-between;
-}
-#answer-bloc, #question-bloc {
-    width: 50%;
-    height: 400px;
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-}
-#answer-bloc {
-    background-image: url(../images/painter.png);
-    justify-content: flex-end;
-}
-#question-bloc {
-    background-image: url(../images/woman.png);
-}
-#bubble {
-    width: 100%;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(../images/right-bubble.png)
-}
-#answer {
-    margin-top: 90px;
-    margin-right: 45px;
-    width: 90px;
-    height: 150px;
-    background-color: aqua;
-    transform: skewX(-5deg);
-}
-
-
-
-#app-box-number6 {
-    background-color: darkturquoise;
-}
-
-
-
-#app-box-number7 {
-    background-color: fuchsia;
-}
-
-
-
-#app-box-number8 {
-    background-color: peru;
-}
-
-
-
-#app-box-number9 {
-    background-color: rebeccapurple;
-}
-#thank-you-msg {
-    display: none;
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    font-size: 1.5em;
-}
-#sent-msg {
-    display: none;
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    font-size: 2em;
-    color: green;
-}
-#rating-form {
-    display: flex;
-    width: 95%;
-    margin: auto;
-}
-#rating-star {
-    width: 48%;
-    margin: 0 auto;
-    border-right: 1px solid black;
-    font-size: 1.5em;
-}
-#rating-star input {
-    display: none;
-}
-#rating-star span {
-    color: yellow;
-}
-#rating-star span:hover {
-    cursor: pointer;
-}
-#rating-advice {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-}
-#user-advice {
-    width: 80%;
-    height: 60px;
-    font-size: 16px;
-    margin: auto;
-}
-#sendbutton {
-    width: 40%;
-    margin: auto;
-    height: 30px;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 5px 5px
-}
-
 
 [id^="app-box-number"] h2 {
    margin-left: 20px;
 }
+
+[id^="app-number"]:hover {
+    animation: moveIcon 1s infinite alternate ; 
+    cursor: pointer; 
+}
+
 
 .bottom-skills {
     width: 100%;
@@ -395,16 +238,301 @@ footer a, footer a:visited {
     justify-content: flex-end;
     align-items: center;
 }
+
 .bottom-skills p {
     margin-right: 10px;
     font-size: 1.2em;
 }
+
 .bottom-skills a, .bottom-skills a:visited {
     color: black;
     text-decoration: none;
 }
 
-/* ============== Animations =============== */
+
+/* ----- App 1 - Video ------- */
+
+#app-box-number1 {
+    background-color: aliceblue;
+}
+
+#scratch-video {
+    width: 480px;
+    height: 320px;
+    margin: auto;
+}
+
+
+/* ----- App 2 - Forms ------- */
+
+#app-box-number2 {
+    background-color: navajowhite;
+}
+
+
+/* ----- App 3 - Weather ------- */
+
+#app-box-number3 {
+    background-color: firebrick;
+}
+
+#weather {
+    
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+#weather-name {   
+    font-size: 1.5em;
+    text-decoration: underline;   
+}
+
+#stockholm-weather {
+    display: flex;
+    justify-content: space-around;
+}
+
+#today-weather {
+    width: 45%;
+    border-right: 1px solid black;
+}
+
+#tommorow-weather {
+    width: 45%;
+}
+
+
+/* ----- App 4 - Memo ------- */
+
+#app-box-number4 {
+    background-color: khaki;
+}
+
+
+/* ----- App 5 - Conditions ------- */
+
+#app-box-number5 {
+    background-color: lawngreen;
+}
+
+#interview {
+    display: flex;
+    justify-content: space-between;
+}
+
+#answer-bloc, #question-bloc {
+    width: 50%;
+    height: 400px;
+    background-size: 70%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+#answer-bloc {
+    background-image: url(../images/painter.png);
+    justify-content: flex-end;
+}
+
+#question-bloc {
+    background-image: url(../images/woman.png);
+}
+
+#bubble {
+    width: 100%;
+    height: 100px;
+    
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/question1.png)
+}
+
+#answer {
+    margin-top: 90px;
+    margin-right: 45px;
+    width: 90px;
+    height: 150px;
+    
+    transform: skewX(-5deg);
+    font-size: 1.6em;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+/* ----- App 6 - Pizza ------- */
+
+#app-box-number6 {
+    background-color: darkturquoise;
+}
+
+
+/* ----- App 7 - Settings ------- */
+
+#app-box-number7 {
+    background-color: fuchsia;
+}
+
+#settings img {   
+    max-width: 80px;
+    max-height: 100px;   
+}
+
+#settings input[type="radio"] {   
+    margin-left: 10px;  
+}
+
+#settings {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    border: 2px solid black;
+    height: 300px;
+}
+
+#nav-settings {
+    background-color: #f1f1f1;
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#nav-settings button {
+    display: block;
+    color: black;
+    padding: 20px 5px;
+    width: 100%;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    background-color: #e1e1e1;
+}
+
+#nav-settings button:hover {
+    background-color: #aaa;
+}
+
+#nav-settings button.active {
+  background-color: #ccc;
+}
+
+#wallpaper, #language {
+    width: 80%;
+    background-color: #f1f1f1;
+    height: 100%;
+    
+    display: none; 
+    /* turn flex with js */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#language {
+    display: flex;
+}
+
+.wallpaper-img, .language-img {
+    width: 50%;
+    text-align: center;
+}
+
+
+
+/* ----- App 8 - Version 1 ------- */
+
+#app-box-number8 {
+    background-color: peru;
+}
+
+
+/* ----- App 9 - Rating ------- */
+
+#app-box-number9 {
+    background-color: rebeccapurple;
+}
+
+#thank-you-msg {
+    display: none;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#sent-msg {
+    display: none;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    color: green;
+}
+
+#rating-form {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+#rating-star {
+    width: 48%;
+    margin: 0 auto;
+    border-right: 1px solid black;
+    font-size: 1.5em;
+}
+
+#rating-star input {
+    display: none;
+}
+
+#rating-star span {
+    color: yellow;
+}
+
+#rating-star span:hover {
+    cursor: pointer;
+}
+
+#rating-advice {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+#user-advice {
+    width: 80%;
+    height: 60px;
+    font-size: 16px;
+    margin: auto;
+}
+
+#sendbutton {
+    width: 40%;
+    margin: auto;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px
+}
+
+
+
+
+
+
+
+/* ====================== Animations ======================== */
+
 
 @keyframes moveIcon {
     33% {
@@ -447,58 +575,88 @@ footer a, footer a:visited {
 }
 
 
-[id^="app-number"]:hover {
-    animation: moveIcon 1s infinite alternate ; 
-    cursor: pointer; 
-}
 
 
 
 
-/* ============== Responsive part =============== */
+/* ===================== Responsive  ===================== */
 
 @media (max-width: 955px) {
+    
+    /* ========= App box ========== */
+    
     [id^="app-box-number"] {
         width: 400px;
         height: 400px;
     }  
+    
+    [id^="app-box-number"] img {
+        max-width: 360px;
+        max-height: 240px;
+    }
+    
+    /* ----- App 1 - Video ----- */
+    
     #scratch-video {
         width: 360px;
         height: 240px;
     }
-    #app-box-number4 img {
-        max-width: 360px;
-        max-height: 240px;
-    }
-    #rating-star {
-        font-size: 1.2em;
-    }
+    
+    /* ----- App 5 - Conditions ----- */
+    
     #answer-bloc {
         height: 300px;
     }
+    
     #question-bloc {
         height: 300px;
     }
+    
     #bubble {
         height: 80px;
     }
+    
     #answer {
         margin-top: 60px;
         margin-right: 35px;
         width: 75px;
         height: 120px;
     }
+    
+    /* ----- App 7 - Setting ----- */
+    
+    #settings {
+        height: 250px
+    }
+    
+    #nav-settings button {
+        font-size: 0.8em;
+    }
+    
+    /* ----- App 9 - Rating ----- */
+    
+    #rating-star {
+        font-size: 1.2em;
+    }
 }
 
 @media (max-width: 785px) {
+    
+    /* ========= Global ========== */
+    
     #main {
         background-image: url("../images/main/white.png");
     }
+    
     #smartphone {
         width: 100%;
     }
+    
+    /* ========= App box ========== */
+    
     #opened-app {
         width: 100%;
     }
-    /* Open box manage with JS */
 }
+
+
