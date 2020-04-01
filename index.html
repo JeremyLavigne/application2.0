@@ -21,6 +21,15 @@
         <!-- Fontawesome Icons -->
         <link rel="stylesheet" href="css/css/all.css"> 
         
+        <!-- Use of EmailJs plateform to receive message via the contact form without using backend -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script>
+            (function(){
+                emailjs.init("user_kGCbguYyMwED8htBgBu7M");
+            })();
+        </script>
+        
     </head>
     
     <body>
@@ -52,6 +61,12 @@
                 <div id="app-box-number2">
                     
                     <h2>Survey - Prototype</h2>
+   
+                    <p class="contain-img">
+                        <a href="#" target="_blank">
+                            <img src="#" alt="Coming soon">
+                        </a>
+                    </p>
                     
                     <div class="bottom-skills">
                         <p>ReactJS</p>
@@ -105,7 +120,7 @@
                     
                     <h2>Game - Test your Memory</h2>
                     
-                    <p>
+                    <p class="contain-img">
                         <a href="memo-game/memo.html" target="_blank">
                             <img src="memo-game/images/labyrinth.png" alt="pizza-game-img">
                         </a>
@@ -119,15 +134,31 @@
                 
                 <div id="app-box-number5">
                     
-                    <h2>3 months half paid!</h2>
+                    <h2>Conditions</h2>
+                    
+                    <div id="interview">
+                    
+                        <div id="question-bloc">
+                            
+                            <div id="bubble"></div>
+                            
+                        </div>
+                        
+                        <div id="answer-bloc">
+                        
+                            <p id="answer"></p>
+                            
+                        </div>
+                        
+                    </div>
                      
-                </div><!-- TO DO -->
+                </div>
                 
                 <div id="app-box-number6">
                     
                     <h2>Game - Make a pizza</h2>
                     
-                    <p>
+                    <p class="contain-img">
                         <a href="react-pizza/public/index.html" target="_blank">
                             <img src="react-pizza/src/images/pizza-maker.png" alt="memo-game-img">
                         </a>
@@ -143,6 +174,83 @@
                     
                     <h2>Settings</h2>
                     
+                    <div id="settings">
+                        
+                        <div id="nav-settings">
+                            
+                            <button>Wallpaper</button>
+                            <button>Language</button>
+                            <button>Apps</button>
+                            
+                        </div>
+
+                        <div id="wallpaper">
+                            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm1" name="stockholm" checked>
+
+                                <br>
+
+                                <label for="stockholm1"><img src="images/screen/stockholm1.jpg" alt="stockholm1"></label>
+                            </div>
+            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm2" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm2"><img src="images/screen/stockholm2.jpg" alt="stockholm2"></label>
+                            </div>
+                
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm3" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm3"><img src="images/screen/stockholm3.jpg" alt="stockholm3"></label>
+                            </div>
+            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm4" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm4"><img src="images/screen/stockholm4.jpg" alt="stockholm4"></label>
+                            </div>
+                            
+                        </div>
+
+                        <div id="language">
+                            
+                            <div class="language-img">
+                                <input type="radio" id="english-flag" name="flag" checked>
+
+                                <br>
+
+                                <label for="english-flag"><img src="images/screen/english-flag.jpg" alt="english-flag"></label>
+                            </div>
+                
+                            <div class="language-img">
+                                <input type="radio" id="swedish-flag" name="flag">
+
+                                <br>
+
+                                <label for="swedish-flag"><img src="images/screen/swedish-flag.png" alt="swedish-flag"></label>
+                            </div>
+            
+                            <div class="language-img">
+                                <input type="radio" id="french-flag" name="flag">
+
+                                <br>
+
+                                <label for="french-flag"><img src="images/screen/french-flag.png" alt="french-flag"></label>
+                            </div>
+                            
+                        </div>
+
+                    
+                    </div>
+                    
                     <div class="bottom-skills">
                         <p>Javascript</p>
                     </div>
@@ -153,7 +261,7 @@
                     
                     <h2>Website - version 1</h2>
                     
-                    <p>
+                    <p class="contain-img">
                         <a href="version-1/index.html" target="_blank">
                             <img src="images/overview-website-v1.png" alt="website-v1-img">
                         </a>
@@ -169,11 +277,59 @@
                     
                     <h2>Rate this website</h2>
                     
+                    <p id="thank-you-msg"> Thank you very much ;)</p>
+                    <p id="sent-msg"> &#10004; </p>
+                    
+                    <form id="rating-form">
+                        
+                        <div id="rating-star">
+                            
+                            <p>Idea 
+                                <input type="text" id="idea-rating" name="idea-rating">
+                                <span id="idea-star1">&#9734;</span>
+                                <span id="idea-star2">&#9734;</span>
+                                <span id="idea-star3">&#9734;</span>
+                                <span id="idea-star4">&#9734;</span>
+                                <span id="idea-star5">&#9734;</span>
+                            </p>
+                            
+                            <p>Design 
+                                <input type="text" id="design-rating" name="design-rating">
+                                <span id="design-star1">&#9734;</span>
+                                <span id="design-star2">&#9734;</span>
+                                <span id="design-star3">&#9734;</span>
+                                <span id="design-star4">&#9734;</span>
+                                <span id="design-star5">&#9734;</span>
+                            </p>
+                            
+                            <p>Skills 
+                                <input type="text" id="skills-rating" name="skills-rating">
+                                <span id="skills-star1">&#9734;</span>
+                                <span id="skills-star2">&#9734;</span>
+                                <span id="skills-star3">&#9734;</span>
+                                <span id="skills-star4">&#9734;</span>
+                                <span id="skills-star5">&#9734;</span>
+                            </p>
+                            
+                        </div>
+                        
+                        <div id="rating-advice">
+                            
+                            <textarea type="text" id="user-advice" name="user-advice" placeholder="Any advice? (optional)" maxlength="255"></textarea>
+                            
+                            <br><br>
+                            
+                            <button type="submit" id="sendbutton">Send</button>
+                            
+                        </div>
+                        
+                    </form>
+                    
                     <div class="bottom-skills">
                         <p>EmailJS</p>
                     </div>
                     
-                </div><!-- TO DO -->
+                </div>
                     
             </section>
                 
@@ -256,7 +412,6 @@
         </footer>
         
         <script src="js/index.js"></script>
-        <script src="js/apps.js"></script>
     </body>
     
 </html>
