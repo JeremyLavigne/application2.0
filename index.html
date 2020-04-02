@@ -35,7 +35,7 @@
     <body>
         
         <header>
-            <h1>Jeremy Lavigne, Front-end Developer Junior</h1>
+            <h1 id="title">Jeremy Lavigne, Front-end Developer</h1>
         </header>
       
         <main id="main">
@@ -44,7 +44,7 @@
                 
                 <div id="app-box-number1">
                     
-                    <h2>Video - Resume</h2>
+                    <h2 id="app1-title">Video - Resume</h2>
                     
                     <video id="scratch-video" controls muted>
                         <source src="video/movie.mp4" type="video/mp4">
@@ -60,7 +60,7 @@
                 
                 <div id="app-box-number2">
                     
-                    <h2>Survey - Prototype</h2>
+                    <h2 id="app2-title">Website - Survey / FAQ / Form</h2>
    
                     <p class="contain-img">
                         <a href="#" target="_blank">
@@ -76,7 +76,7 @@
                 
                 <div id="app-box-number3">
                     
-                    <h2>Weather</h2>
+                    <h2 id="app3-title">Weather</h2>
                     
                     <div id="weather">
                         
@@ -86,10 +86,14 @@
                             
                             <div id="today-weather">
 
-                                <h3>Today</h3>
+                                <h3 id="today-title">Today</h3>
 
-                                <p id="weather-temp"></p>
-                                <p id="weather-wind"></p>
+                                <p><span id="change-weather1">Current temperature : </span><span id="weather-temp"></span>
+                                </p>
+                              
+                                <p><span id="change-weather2">Wind speed : </span>
+                                <span id="weather-wind"></span>
+                                </p>
 
                                 <img id="weather-cloud" src="#" alt="weather-icon">
 
@@ -97,10 +101,14 @@
 
                             <div id="tommorow-weather">
 
-                                <h3>Tommorow</h3>
+                                <h3 id="tomorrow-title">Tomorrow</h3>
 
-                                <p id="weather-temp2"></p>
-                                <p id="weather-wind2"></p>
+                                <p><span id="change-weather3">Expected temperature : </span><span id="weather-temp2"></span>
+                                </p>
+                                
+                                <p><span id="change-weather4">Wind speed : </span>
+                                <span id="weather-wind2"></span>
+                                </p>
 
                                 <img id="weather-cloud2" src="#" alt="weather-icon2">
 
@@ -118,7 +126,7 @@
                 
                 <div id="app-box-number4">
                     
-                    <h2>Game - Test your Memory</h2>
+                    <h2 id="app4-title">Game - Test your Memory</h2>
                     
                     <p class="contain-img">
                         <a href="memo-game/memo.html" target="_blank">
@@ -134,7 +142,7 @@
                 
                 <div id="app-box-number5">
                     
-                    <h2>Conditions</h2>
+                    <h2 id="app5-title">Conditions</h2>
                     
                     <div id="interview">
                     
@@ -156,7 +164,7 @@
                 
                 <div id="app-box-number6">
                     
-                    <h2>Game - Make a pizza</h2>
+                    <h2 id="app6-title">Game - Make a pizza</h2>
                     
                     <p class="contain-img">
                         <a href="react-pizza/public/index.html" target="_blank">
@@ -172,22 +180,22 @@
                 
                 <div id="app-box-number7">
                     
-                    <h2>Settings</h2>
+                    <h2 id="app7-title">Settings</h2>
                     
                     <div id="settings">
                         
                         <div id="nav-settings">
                             
-                            <button>Wallpaper</button>
-                            <button>Language</button>
-                            <button>Apps</button>
+                            <button id="wallpaper-btn" class=" active">Wallpaper</button>
+                            
+                            <button id="language-btn" class="">Language</button>
                             
                         </div>
 
                         <div id="wallpaper">
                             
                             <div class="wallpaper-img">
-                                <input type="radio" id="stockholm1" name="stockholm" checked>
+                                <input type="radio" id="stockholm1" name="stockholm">
 
                                 <br>
 
@@ -211,7 +219,7 @@
                             </div>
             
                             <div class="wallpaper-img">
-                                <input type="radio" id="stockholm4" name="stockholm">
+                                <input type="radio" id="stockholm4" name="stockholm" checked>
 
                                 <br>
 
@@ -247,7 +255,6 @@
                             </div>
                             
                         </div>
-
                     
                     </div>
                     
@@ -255,11 +262,11 @@
                         <p>Javascript</p>
                     </div>
                     
-                </div><!-- TO DO -->
+                </div>
                 
                 <div id="app-box-number8">
                     
-                    <h2>Website - version 1</h2>
+                    <h2 id="app8-title">Website - Version 1</h2>
                     
                     <p class="contain-img">
                         <a href="version-1/index.html" target="_blank">
@@ -275,7 +282,7 @@
                 
                 <div id="app-box-number9">
                     
-                    <h2>Rate this website</h2>
+                    <h2 id="app9-title">Rate this website</h2>
                     
                     <p id="thank-you-msg"> Thank you very much ;)</p>
                     <p id="sent-msg"> &#10004; </p>
@@ -284,7 +291,7 @@
                         
                         <div id="rating-star">
                             
-                            <p>Idea 
+                            <p><span id="change-form1">Idea</span>
                                 <input type="text" id="idea-rating" name="idea-rating">
                                 <span id="idea-star1">&#9734;</span>
                                 <span id="idea-star2">&#9734;</span>
@@ -293,7 +300,7 @@
                                 <span id="idea-star5">&#9734;</span>
                             </p>
                             
-                            <p>Design 
+                            <p><span id="change-form2">Design</span>
                                 <input type="text" id="design-rating" name="design-rating">
                                 <span id="design-star1">&#9734;</span>
                                 <span id="design-star2">&#9734;</span>
@@ -302,7 +309,7 @@
                                 <span id="design-star5">&#9734;</span>
                             </p>
                             
-                            <p>Skills 
+                            <p><span id="change-form3">Skills</span> 
                                 <input type="text" id="skills-rating" name="skills-rating">
                                 <span id="skills-star1">&#9734;</span>
                                 <span id="skills-star2">&#9734;</span>
@@ -379,21 +386,30 @@
 
                     <div id="app-bottom-bloc">
 
-                        <div id="link-number1">
+                        <a id="link-number1" href="https://github.com/JeremyLavigne/application2.0" target="_blank">
                             <i class="fab fa-github-square"></i>
-                        </div>
+                        </a>
                         
-                        <div id="link-number2">
+                        <a id="link-number2" href="http://www.linkedin.com/in/jérémy-lavigne-33577a177" target="_blank">
                             <i class="fab fa-linkedin"></i>
-                        </div>
+                        </a>
                         
                         <div id="link-number3">
+                            
+                            <div id="id-card">
+                                <p id="change-id1">Name : Jeremy Lavigne</p>
+                                <p id="change-id2">Age : 30</p>
+                                <p id="change-id3">French,</p>
+                                <p id="change-id4">Settled in Stockholm since 2019</p>
+                            </div>
+                            
                             <i class="fas fa-id-card"></i>
+                            
                         </div>
                         
-                        <div id="link-number4">
+                        <a id="link-number4" href="mailto:lavigne.jeremy@yahoo.fr">
                             <i class="fas fa-envelope-open"></i>
-                        </div>
+                        </a>
 
                     </div>
                         
@@ -404,11 +420,11 @@
         </main>
         
         <footer>
-            <p>Images from <a href="www.pixabay.com"> Pixabay </a></p>
+            <p><span id="change-footer1">Images from</span> <a href="www.pixabay.com"> Pixabay </a></p>
             
-            <p>Build by Jeremy Lavigne</p>
+            <p><span id="change-footer2">Build by</span> Jeremy Lavigne</p>
             
-            <p>Icons from <a href="www.fontawesome.com"> Fontawesome </a></p>
+            <p><span id="change-footer3">Icons from</span> <a href="www.fontawesome.com"> Fontawesome </a></p>
         </footer>
         
         <script src="js/index.js"></script>

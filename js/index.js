@@ -18,13 +18,14 @@ var boxIsOpen = false;
 var tinyVue = window.matchMedia("(max-width: 785px)"); 
 
 
-// allow click Event on each app for the first time
+// Allow click Event on each app for the first time
 
 allowOpenOthers();
 
 // Listener if media change when some box is already open
 
 tinyVue.addListener(isTinyVueWhenBoxOpened);
+
 
 
 
@@ -203,6 +204,7 @@ function hideBoxAnimation() {
 }
 
 
+
 /* --------- Responsive part - open/close --------------- */
 
 function isTinyVue() { // if app is open when little width
@@ -225,8 +227,6 @@ function isTinyVueWhenBoxOpened() {
         }
     }
 } 
-
-
 
 
 
@@ -264,7 +264,7 @@ function pauseVideo() {
 function scriptApp3() {
     
     // Get datas on api.openweathermap.org
-
+    
 // Today
 ajaxGet("http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=0b0ebfd8043e4d1ca9870164f1abb64e", function (reponse) {
     
@@ -278,9 +278,9 @@ ajaxGet("http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=0b0ebf
     
     weatherNameElt.innerHTML = infos.name;
     
-    weatherTempElt.innerHTML = "Actual temperature : " + Math.round(infos.main.temp - 273) + "°C";
+    weatherTempElt.innerHTML = Math.round(infos.main.temp - 273) + "°C";
     
-    weatherWindElt.innerHTML = "Wind speed : " + (Math.round(infos.wind.speed * 3.6)) + " km/h.";
+    weatherWindElt.innerHTML = (Math.round(infos.wind.speed * 3.6)) + " km/h.";
     
     weatherCloudElt.src = "http://openweathermap.org/img/wn/" + infos.weather[0].icon + "@2x.png";
 });
@@ -295,9 +295,9 @@ ajaxGet("http://api.openweathermap.org/data/2.5/forecast?q=Stockholm&APPID=0b0eb
     var weatherCloud2Elt = document.getElementById("weather-cloud2");
     
     
-    weatherTemp2Elt.innerHTML = "Expect temperature : " + Math.round(infos2.list[5].main.temp - 273) + "°C";
+    weatherTemp2Elt.innerHTML = Math.round(infos2.list[5].main.temp - 273) + "°C";
     
-    weatherWind2Elt.innerHTML = "Wind speed : " + (Math.round(infos2.list[5].wind.speed * 3.6)) + " km/h.";
+    weatherWind2Elt.innerHTML = (Math.round(infos2.list[5].wind.speed * 3.6)) + " km/h.";
     
     weatherCloud2Elt.src = "http://openweathermap.org/img/wn/" + infos2.list[5].weather[0].icon + "@2x.png";
 });
@@ -331,6 +331,10 @@ function ajaxGet(url, callback) {
 
 var interval = ""; 
 var currentQuestion = 1; 
+var answer1 = "Full-time Part-time" ;
+var answer2 = "Tell me!" ;
+var answer3 = "Employee Intern Other" ;
+var access = "english";
 
 function scriptApp5() {
     
@@ -339,15 +343,11 @@ function scriptApp5() {
 
 function questionAnswer() {
 
-    var answer1 = "Full-time Part-time" ;
-    var answer2 = "Tell me!" ;
-    var answer3 = "Employee Intern Other" ;
-
     var bubbleElt = document.getElementById("bubble");
     var answerElt = document.getElementById("answer");
     
     
-    bubbleElt.style.backgroundImage = "url('images/question" + currentQuestion + ".png')";
+    bubbleElt.style.backgroundImage = "url('images/" + access + "/question" + currentQuestion + ".png')";
 
     switch (currentQuestion) {
         case 1 : 
@@ -383,11 +383,287 @@ function questionAnswer() {
 /* --------- App number 7 - Setting --------------- */
 
 function scriptApp7() {
-
+    
+    document.getElementById("wallpaper-btn").addEventListener("mouseover", openWallpaper);
+    
+    document.getElementById("language-btn").addEventListener("mouseover", openLanguage);
+    
+    changeWallpaper();
+    
+    changeLanguage();
     
 }
 
+function openWallpaper() {
+    
+    clearSetting();
+    
+    document.getElementById("wallpaper").style.display = "flex";
+    
+    clearButton();
+    
+    document.getElementById("wallpaper-btn").className += " active";
+    
+}
 
+function openLanguage() {
+    
+    clearSetting();
+    
+    document.getElementById("language").style.display = "flex";
+    
+    clearButton();
+    
+    document.getElementById("language-btn").className += " active";
+}
+
+function clearSetting() {
+    
+    document.getElementById("wallpaper").style.display = "none";
+    document.getElementById("language").style.display = "none";
+    
+}
+
+function clearButton() {
+    
+    var btn1 = document.getElementById("wallpaper-btn");
+    var btn2 = document.getElementById("language-btn");
+    
+    btn1.className = btn1.className.replace(" active", "");
+    btn2.className = btn2.className.replace(" active", "");
+}
+
+function changeWallpaper() {
+    
+    document.getElementById("stockholm1").addEventListener("change", function() {
+        document.getElementById("smartphone-screen").style.backgroundImage = "url('images/screen/stockholm1.jpg')";
+    });
+    
+    document.getElementById("stockholm2").addEventListener("change", function() {
+        document.getElementById("smartphone-screen").style.backgroundImage = "url('images/screen/stockholm2.jpg')";
+    });
+    
+    document.getElementById("stockholm3").addEventListener("change", function() {
+        document.getElementById("smartphone-screen").style.backgroundImage = "url('images/screen/stockholm3.jpg')";
+    });
+    
+    document.getElementById("stockholm4").addEventListener("change", function() {
+        document.getElementById("smartphone-screen").style.backgroundImage = "url('images/screen/stockholm4.jpg')";
+    });
+}
+
+function changeLanguage() {
+    
+    document.getElementById("english-flag").addEventListener("change", function() {
+        goEnglish();
+    });
+    
+    document.getElementById("swedish-flag").addEventListener("change", function() {
+        goSvenska();
+    });
+    
+    document.getElementById("french-flag").addEventListener("change", function() {
+        goFrancais();
+    });
+    
+}
+
+// Too heavy ? don't want refresh page. Better use React ? Can't change all now. Next time!
+
+function goEnglish() {
+    
+    /* background-image */
+    document.getElementById("main").style.backgroundImage = "url('images/main/background-en.png')";
+    
+    /* header */
+    document.getElementById("title").innerHTML = "Jérémy Lavigne, Front-End Developer";
+    
+    /* footer */
+    document.getElementById("change-footer1").innerHTML = "Images from";
+    document.getElementById("change-footer2").innerHTML = "Build by";
+    document.getElementById("change-footer3").innerHTML = "Icons from";
+    
+    /* App 1 */
+    document.getElementById("app1-title").innerHTML = "Video - Resume";
+    
+    /* App 2 */
+    document.getElementById("app2-title").innerHTML = "Website - Survey / FAQ / Form";
+    
+    /* App 3 */
+    document.getElementById("app3-title").innerHTML = "Weather";
+    document.getElementById("today-title").innerHTML = "Today";
+    document.getElementById("tomorrow-title").innerHTML = "Tomorrow";
+    document.getElementById("change-weather1").innerHTML = "Current temperature : ";
+    document.getElementById("change-weather2").innerHTML = "Wind speed : ";
+    document.getElementById("change-weather3").innerHTML = "Expected temperature : ";
+    document.getElementById("change-weather4").innerHTML = "Wind speed : ";
+    
+    /* App 4 */
+    document.getElementById("app4-title").innerHTML = "Game - Test your memory";
+    
+    /* App 5 */
+    document.getElementById("app5-title").innerHTML = "Conditions";
+    answer1 = "Full-time Part-time" ;
+    answer2 = "Tell me!" ;
+    answer3 = "Employee Intern Other" ;
+    access = "english";
+    
+    /* App 6 */
+    document.getElementById("app6-title").innerHTML = "Game - Make a pizza";
+    
+    /* App 7 */
+    document.getElementById("app7-title").innerHTML = "Settings";
+    document.getElementById("wallpaper-btn").innerHTML = "Wallpaper";
+    document.getElementById("language-btn").innerHTML = "Language";
+    
+    /* App 8 */
+    document.getElementById("app8-title").innerHTML = "Website - Version 1";    
+    
+    /* App 9 */
+    document.getElementById("app9-title").innerHTML = "Rate this website";
+    document.getElementById("thank-you-msg").innerHTML = "Thank you very much ;)";
+    document.getElementById("change-form1").innerHTML = "Idea";
+    document.getElementById("change-form2").innerHTML = "Design";
+    document.getElementById("change-form3").innerHTML = "Skills";
+    document.getElementById("user-advice").placeholder = "Any advice? (optional)";
+    document.getElementById("sendbutton").innerHTML = "Send";
+    
+    /* ID-card */
+    document.getElementById("change-id1").innerHTML = "Name : Jeremy Lavigne ";
+    document.getElementById("change-id2").innerHTML = "Age : 30";
+    document.getElementById("change-id3").innerHTML = "French, ";
+    document.getElementById("change-id4").innerHTML = "Settled in Stockholm since 2019 ";
+}
+
+function goSvenska() {
+    
+    /* background-image */
+    document.getElementById("main").style.backgroundImage = "url('images/main/background-sv.png')";
+    
+    /* header */
+    document.getElementById("title").innerHTML = "Jérémy Lavigne, Front-End Utvecklare";
+    
+    /* footer */
+    document.getElementById("change-footer1").innerHTML = "Bilder från";
+    document.getElementById("change-footer2").innerHTML = "Gjord av";
+    document.getElementById("change-footer3").innerHTML = "Ikoner från";
+    
+    /* App 1 */
+    document.getElementById("app1-title").innerHTML = "Video - CV";
+    
+    /* App 2 */
+    document.getElementById("app2-title").innerHTML = "Webbplats - undersökning / vanliga frågor / formulär";
+    
+    /* App 3 */
+    document.getElementById("app3-title").innerHTML = "Väder";
+    document.getElementById("today-title").innerHTML = "I dag";
+    document.getElementById("tomorrow-title").innerHTML = "I Morgon";
+    document.getElementById("change-weather1").innerHTML = "Aktuell temperatur : ";
+    document.getElementById("change-weather2").innerHTML = "Vindhastighet : ";
+    document.getElementById("change-weather3").innerHTML = "Förväntad temperatur : ";
+    document.getElementById("change-weather4").innerHTML = "Vindhastighet : ";
+
+    /* App 4 */
+    document.getElementById("app4-title").innerHTML = "Spel - Testa ditt minne";
+    
+    /* App 5 */
+    document.getElementById("app5-title").innerHTML = "Termer";
+    answer1 = "Heltid Deltid" ;
+    answer2 = "Berätta för mig !" ;
+    answer3 = "Anställd Praktikant Annat" ;
+    access = "svenska";
+    
+    /* App 6 */
+    document.getElementById("app6-title").innerHTML = "Spel - Gör en pizza";
+    
+    /* App 7 */
+    document.getElementById("app7-title").innerHTML = "Inställningar";
+    document.getElementById("wallpaper-btn").innerHTML = "Tapet";
+    document.getElementById("language-btn").innerHTML = "Språk";
+    
+    /* App 8 */
+    document.getElementById("app8-title").innerHTML = "Hemsida - Version 1";
+    
+    /* App 9 */
+    document.getElementById("app9-title").innerHTML = "Betygsätt denna webbplats";
+    document.getElementById("thank-you-msg").innerHTML = "Tack så mycket ;)";
+    document.getElementById("change-form1").innerHTML = "Idé";
+    document.getElementById("change-form2").innerHTML = "Design";
+    document.getElementById("change-form3").innerHTML = "Teknisk";
+    document.getElementById("user-advice").placeholder = "Några råd? (valfritt)";
+    document.getElementById("sendbutton").innerHTML = "Skicka";
+    
+    /* ID-card */
+    document.getElementById("change-id1").innerHTML = "Namn : Jeremy Lavigne ";
+    document.getElementById("change-id2").innerHTML = "ålder : 30";
+    document.getElementById("change-id3").innerHTML = "Fransk, ";
+    document.getElementById("change-id4").innerHTML = "Bosatt i Stockholm sedan 2019 ";
+}
+
+function goFrancais() {
+    
+    /* background-image */
+    document.getElementById("main").style.backgroundImage = "url('images/main/background-fr.png')";
+    
+    /* header */
+    document.getElementById("title").innerHTML = "Jérémy Lavigne, Developpeur Front-End";
+    
+    /* footer */
+    document.getElementById("change-footer1").innerHTML = "Images par";
+    document.getElementById("change-footer2").innerHTML = "Réalisé par";
+    document.getElementById("change-footer3").innerHTML = "Icones par";
+    
+    /* App 1 */
+    document.getElementById("app1-title").innerHTML = "Video - CV";
+    
+    /* App 2 */
+    document.getElementById("app2-title").innerHTML = "Site Web - Questionnaire / FAQ / Formulaire";
+    
+    /* App 3 */
+    document.getElementById("app3-title").innerHTML = "Météo";
+    document.getElementById("today-title").innerHTML = "Aujourd'hui";
+    document.getElementById("tomorrow-title").innerHTML = "Demain";
+    document.getElementById("change-weather1").innerHTML = "Temperature actuelle : ";
+    document.getElementById("change-weather2").innerHTML = "Vitesse du vent : ";
+    document.getElementById("change-weather3").innerHTML = "Temperature attendue : ";
+    document.getElementById("change-weather4").innerHTML = "vitesse du vent : ";
+
+    /* App 4 */
+    document.getElementById("app4-title").innerHTML = "Jeu - Testez votre mémoire";
+    
+    /* App 5 */
+    document.getElementById("app5-title").innerHTML = "Conditions";
+    answer1 = "Plein, Partiel" ;
+    answer2 = "Dites moi!" ;
+    answer3 = "Employé Stagiaire Autre" ;
+    access = "fr";
+    
+    /* App 6 */
+    document.getElementById("app6-title").innerHTML = "Jeu - Faites votre pizza";
+    
+    /* App 7 */
+    document.getElementById("app7-title").innerHTML = "Réglages";
+    document.getElementById("wallpaper-btn").innerHTML = "Fond écran";
+    document.getElementById("language-btn").innerHTML = "Langue";
+    
+    /* App 8 */
+    document.getElementById("app8-title").innerHTML = "Site Web - Version 1";
+    
+    /* App 9 */
+    document.getElementById("app9-title").innerHTML = "Notez ce site";
+    document.getElementById("thank-you-msg").innerHTML = "Merci beaucoup ;)";
+    document.getElementById("change-form1").innerHTML = "Idée";
+    document.getElementById("change-form2").innerHTML = "Design";
+    document.getElementById("change-form3").innerHTML = "Technique";
+    document.getElementById("user-advice").placeholder = "Un conseil? (optionnel)";
+    document.getElementById("sendbutton").innerHTML = "Envoyer";
+    
+    /* ID-card */
+    document.getElementById("change-id1").innerHTML = "Nom : Jeremy Lavigne ";
+    document.getElementById("change-id2").innerHTML = "Age : 30";
+    document.getElementById("change-id3").innerHTML = "Français, ";
+    document.getElementById("change-id4").innerHTML = "Installé à Stockholm depuis 2019";
+}
 
 
 /* --------- App number 9 - Rating --------------- */
