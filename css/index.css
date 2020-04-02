@@ -23,7 +23,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     
-    background-image: url(../images/main/background-main.png);
+    background-image: url(../images/main/background-en.png);
     background-position: top left;
     background-size: cover;
 }
@@ -41,7 +41,7 @@ header, footer {
     color: white;
 }
 
-header h1 {
+#title {
     width: 80%;
     margin: auto;
     font-size: 1em;
@@ -83,7 +83,7 @@ footer a, footer a:visited {
     width: 268px;
     height: 475px;
     
-    background-image: url(../images/screen/stockholm1.jpg);
+    background-image: url(../images/screen/stockholm4.jpg);
     background-size: cover;
     
     border: 1px solid black;
@@ -175,8 +175,34 @@ footer a, footer a:visited {
     
 }
 
+#link-number3 i {
+    font-size: 0.8em;
+}
 
+#id-card {
+    position: absolute;
+    top: -280px;
+    right: -70px;
+    text-align: center;
 
+    width: 240px;
+    height: 280px;
+    
+    background-color: #f3af45;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    font-size: 0.5em;
+    z-index: 2;
+}
+
+#link-number3 {
+    transition: transform 0.2s;
+}
+
+#link-number4 i {
+    font-size: 0.9em;
+}
 
 
 
@@ -250,11 +276,8 @@ footer a, footer a:visited {
 }
 
 
-/* ----- App 1 - Video ------- */
 
-#app-box-number1 {
-    background-color: aliceblue;
-}
+/* ----- App 1 - Video ------- */
 
 #scratch-video {
     width: 480px;
@@ -265,16 +288,8 @@ footer a, footer a:visited {
 
 /* ----- App 2 - Forms ------- */
 
-#app-box-number2 {
-    background-color: navajowhite;
-}
-
 
 /* ----- App 3 - Weather ------- */
-
-#app-box-number3 {
-    background-color: firebrick;
-}
 
 #weather {
     
@@ -306,16 +321,8 @@ footer a, footer a:visited {
 
 /* ----- App 4 - Memo ------- */
 
-#app-box-number4 {
-    background-color: khaki;
-}
-
 
 /* ----- App 5 - Conditions ------- */
-
-#app-box-number5 {
-    background-color: lawngreen;
-}
 
 #interview {
     display: flex;
@@ -348,7 +355,7 @@ footer a, footer a:visited {
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(../images/question1.png)
+    background-image: url(../images/english/question1.png)
 }
 
 #answer {
@@ -366,16 +373,9 @@ footer a, footer a:visited {
 
 /* ----- App 6 - Pizza ------- */
 
-#app-box-number6 {
-    background-color: darkturquoise;
-}
 
 
 /* ----- App 7 - Settings ------- */
-
-#app-box-number7 {
-    background-color: fuchsia;
-}
 
 #settings img {   
     max-width: 80px;
@@ -437,7 +437,7 @@ footer a, footer a:visited {
     align-items: center;
 }
 
-#language {
+#wallpaper {
     display: flex;
 }
 
@@ -450,16 +450,8 @@ footer a, footer a:visited {
 
 /* ----- App 8 - Version 1 ------- */
 
-#app-box-number8 {
-    background-color: peru;
-}
-
 
 /* ----- App 9 - Rating ------- */
-
-#app-box-number9 {
-    background-color: rebeccapurple;
-}
 
 #thank-you-msg {
     display: none;
@@ -503,6 +495,14 @@ footer a, footer a:visited {
     cursor: pointer;
 }
 
+[id^="change-form"] {
+    color: black !important;
+}
+
+[id^="change-form"]:hover {
+    cursor: auto !important;
+}
+
 #rating-advice {
     width: 48%;
     display: flex;
@@ -527,7 +527,15 @@ footer a, footer a:visited {
 
 
 
+/* ----- Apps - back color ------- */
 
+#app-box-number2, #app-box-number4, #app-box-number6, #app-box-number8 {
+    background-color: #f3aa44;
+}
+
+#app-box-number1, #app-box-number3, #app-box-number5, #app-box-number7, #app-box-number9 {
+    background-color: dodgerblue;
+}
 
 
 
