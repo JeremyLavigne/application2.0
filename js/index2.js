@@ -127,13 +127,18 @@ function everywhereExceptHere(e) {
     var target = e.target;
     var activeBox = document.getElementById(activeBoxId);
    
-    /* Cancel if click is on the box or on one of his children : not so good, but no better idea than test all levels of parent node */
-    
-    while (target.id !== "main") {
-        if (target === activeBox) {
-            return;
-        } else {
-            target = target.parentElement;
+    if (e.target.className === "close-btn") {
+        // Go out if close button clicked
+    } else {
+        
+        /* Cancel if click is on the box or on one of his children : not so good, but no better idea than test all levels of parent node */
+        
+        while (target.id !== "main") {
+            if (target === activeBox) {
+                return;
+            } else {
+                target = target.parentElement;
+            }
         }
     }
     
@@ -238,6 +243,15 @@ function isTinyVueWhenBoxOpened() {
 
 /* ======================== App js code ========================== */
 
+/* --------- Link number 3 - Id card --------------- */
+
+document.getElementById("link-number3").addEventListener("mouseover", function() {
+    document.getElementById("id-card").style.display = "block";
+});
+
+document.getElementById("link-number3").addEventListener("mouseout", function() {
+    document.getElementById("id-card").style.display = "none";
+});
 
 /* --------- App number 1 - Video --------------- */
 

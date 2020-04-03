@@ -126,7 +126,7 @@ footer a, footer a:visited {
     height: 63px;
     
     background-color: transparent;
-    background-image: url(../images/icons/scratch-icon.png);
+    background-image: url(../images/scratch-icon.png);
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
@@ -180,6 +180,7 @@ footer a, footer a:visited {
 }
 
 #id-card {
+    display: none;
     position: absolute;
     top: -280px;
     right: -70px;
@@ -194,10 +195,6 @@ footer a, footer a:visited {
     
     font-size: 0.5em;
     z-index: 2;
-}
-
-#link-number3 {
-    transition: transform 0.2s;
 }
 
 #link-number4 i {
@@ -244,7 +241,7 @@ footer a, footer a:visited {
 }
 
 [id^="app-box-number"] h2 {
-   margin-left: 20px;
+   margin: 10px 0 0 20px;
 }
 
 [id^="app-number"]:hover {
@@ -252,6 +249,25 @@ footer a, footer a:visited {
     cursor: pointer; 
 }
 
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.8em;
+    margin-right: 10px;
+    padding: 0;
+    cursor: pointer;
+}
 
 .bottom-skills {
     width: 100%;
@@ -294,7 +310,7 @@ footer a, footer a:visited {
 #weather {
     
     width: 95%;
-    margin: auto;
+    margin: auto 0;
     text-align: center;
     
 }
@@ -610,13 +626,19 @@ footer a, footer a:visited {
         height: 240px;
     }
     
-    /* ----- App 5 - Conditions ----- */
+    /* ----- App 3 - Weather ----- */
     
-    #answer-bloc {
-        height: 300px;
+    #weather {
+        font-size: 0.8em;
     }
     
-    #question-bloc {
+    #weather-cloud, #weather-cloud2 {
+        max-height: 50px;
+    }
+    
+    /* ----- App 5 - Conditions ----- */
+    
+    #answer-bloc, #question-bloc {
         height: 300px;
     }
     
@@ -643,7 +665,7 @@ footer a, footer a:visited {
     
     /* ----- App 9 - Rating ----- */
     
-    #rating-star {
+    #rating-star, #user-advice {
         font-size: 1.2em;
     }
 }
@@ -651,11 +673,7 @@ footer a, footer a:visited {
 @media (max-width: 785px) {
     
     /* ========= Global ========== */
-    
-    #main {
-        background-image: url("../images/main/white.png");
-    }
-    
+        
     #smartphone {
         width: 100%;
     }
@@ -667,4 +685,76 @@ footer a, footer a:visited {
     }
 }
 
+@media (max-width: 485px) {
+    
+    /* ========= App box ========== */
+    
+    [id^="app-box-number"] {
+        width: 300px;
+        height: 300px;
+    }  
+    
+    [id^="app-box-number"] img {
+        max-width: 240px;
+        max-height: 160px;
+    }
+    
+    [id^="app-box-number"] h2 {
+        margin: 5px 0 0 10px;
+        font-size: 1.1em;
+    }
+    
+    /* ----- App 1 - Video ----- */
+    
+    #scratch-video {
+        width: 240px;
+        height: 160px;
+    }
+    
+    /* ----- App 3 - Weather ----- */
+    
+    .speed {
+        display: none;
+    }
+    
+    /* ----- App 5 - Conditions ----- */
+    
+    #answer-bloc, #question-bloc {
+        height: 250px;
+    }
+    
+    #bubble {
+        height: 60px;
+    }
+    
+    #answer {
+        margin-top: 50px;
+        margin-right: 25px;
+        width: 65px;
+        height: 80px;
+        font-size: 1.1em !important;
+    }
+    
+    /* ----- App 7 - Setting ----- */
+    
+    #settings {
+        height: 200px
+    }
+
+    #nav-settings button {
+        font-size: 0.6em;
+    }
+    
+    #settings img {   
+        max-width: 60px;
+        max-height: 60px;   
+    }
+    
+    /* ----- App 9 - Rating ----- */
+    
+    #rating-star, #user-advice {
+        font-size: 0.9em;
+    }
+    
+}
 
