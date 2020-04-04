@@ -1,0 +1,760 @@
+/* ===================== Main css ======================= */
+
+/* ====================================================== */
+
+
+
+
+/* ===================== Global ======================= */
+
+
+body {
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    min-height: 84vh;
+    
+    /* If little width size */
+    padding-left: 10px;
+    
+    /* If smartphone alone */
+    justify-content: flex-end;
+    align-items: center;
+    
+    background-image: url(../images/main/background-en.png);
+    background-position: top left;
+    background-size: cover;
+}
+
+/* ----------- header - footer ----------- */
+
+header, footer {
+    height: 50px;
+    min-height: 8vh;
+    margin: 0;
+    
+    background-color: black;
+    display: flex;
+    text-align: center;
+    color: white;
+}
+
+#title {
+    width: 80%;
+    margin: auto;
+    font-size: 1em;
+}
+
+footer p {
+    width: 30%;
+    margin: auto;
+    font-size: 0.8em;
+}
+
+footer a, footer a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* --------- smartphone ----------- */
+
+#smartphone {
+    display: flex;
+ 
+    /* 50% : must not be < 350px (when body < 700) */
+    width: 50%;
+    height: 700px;
+    
+    background-image: url(../images/main/iphone.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#smartphone-screen {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Do not change size whitout changing smartphone size */   
+    width: 268px;
+    height: 475px;
+    
+    background-image: url(../images/screen/stockholm4.jpg);
+    background-size: cover;
+    
+    border: 1px solid black;
+}
+
+
+
+
+
+
+/* ===================== Apps icons ======================= */
+
+#app-top-bloc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[id^="app-number"] {
+    
+    /* size in relation with screen size */ 
+    width: 60px;
+    height: 60px;
+    
+    margin: 14px;
+    
+    border-radius: 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 2.5em ;
+    color: white;
+}
+
+#app-number1 {
+    /* different icon for this app */
+    
+    width: 63px;
+    height: 63px;
+    
+    background-color: transparent;
+    background-image: url(../images/scratch-icon.png);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#app-number2, #app-number4, #app-number6, #app-number8 {
+    background-color: dodgerblue;
+}
+
+#app-number3, #app-number5, #app-number7, #app-number9 {
+    background-color: #f3aa44;
+}
+
+
+/* ----- bottom bloc ------- */
+
+#app-bottom-bloc {
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+[id^="link-number"] {
+    /* size in relation with screen size */ 
+    width: 50px;
+    height: 50px;
+    
+    margin: 8px;
+    
+    border-radius: 5px;
+    background-color: lawngreen;
+    
+    transition: transform 0.6s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 3em ;
+    color: black;
+}
+
+[id^="link-number"]:hover {
+    
+    transform: scale(1.15);
+    cursor: pointer; 
+    
+}
+
+#link-number3 i {
+    font-size: 0.8em;
+}
+
+#id-card {
+    display: none;
+    position: absolute;
+    top: -280px;
+    right: -70px;
+    text-align: center;
+
+    width: 240px;
+    height: 280px;
+    
+    background-color: #f3af45;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    font-size: 0.5em;
+    z-index: 2;
+}
+
+#link-number4 i {
+    font-size: 0.9em;
+}
+
+
+
+/* ===================== Apps box - open ======================= */
+
+
+#opened-app {
+    width: 50%;
+    display: none;
+}
+
+[id^="app-box-number"] {
+    
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+    border: 2px solid black;
+    
+    border-radius: 10px;
+    
+    background-position: top;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+[id^="app-box-number"] img {
+    
+    max-width: 480px;
+    max-height: 320px;   
+
+}
+
+[id^="app-box-number"] .contain-img {
+    
+    margin: auto;  
+
+}
+
+[id^="app-box-number"] h2 {
+   margin: 10px 0 0 20px;
+}
+
+[id^="app-number"]:hover {
+    animation: moveIcon 1s infinite alternate ; 
+    cursor: pointer; 
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.8em;
+    margin-right: 10px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.bottom-skills {
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    opacity: 0.6;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bottom-skills p {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.bottom-skills a, .bottom-skills a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* ----- App 1 - Video ------- */
+
+#scratch-video {
+    width: 480px;
+    height: 320px;
+    margin: auto;
+}
+
+
+/* ----- App 2 - Forms ------- */
+
+
+/* ----- App 3 - Weather ------- */
+
+#weather {
+    
+    width: 95%;
+    margin: auto 0;
+    text-align: center;
+    
+}
+
+#weather-name {   
+    font-size: 1.5em;
+    text-decoration: underline;   
+}
+
+#stockholm-weather {
+    display: flex;
+    justify-content: space-around;
+}
+
+#today-weather {
+    width: 45%;
+    border-right: 1px solid black;
+}
+
+#tommorow-weather {
+    width: 45%;
+}
+
+
+/* ----- App 4 - Memo ------- */
+
+
+/* ----- App 5 - Conditions ------- */
+
+#interview {
+    display: flex;
+    justify-content: space-between;
+}
+
+#answer-bloc, #question-bloc {
+    width: 50%;
+    height: 400px;
+    background-size: 70%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+#answer-bloc {
+    background-image: url(../images/painter.png);
+    justify-content: flex-end;
+}
+
+#question-bloc {
+    background-image: url(../images/woman.png);
+}
+
+#bubble {
+    width: 100%;
+    height: 100px;
+    
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/english/question1.png)
+}
+
+#answer {
+    margin-top: 90px;
+    margin-right: 45px;
+    width: 90px;
+    height: 150px;
+    
+    transform: skewX(-5deg);
+    font-size: 1.6em;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+/* ----- App 6 - Pizza ------- */
+
+
+
+/* ----- App 7 - Settings ------- */
+
+#settings img {   
+    max-width: 80px;
+    max-height: 100px;   
+}
+
+#settings input[type="radio"] {   
+    margin-left: 10px;  
+}
+
+#settings {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    border: 2px solid black;
+    height: 300px;
+}
+
+#nav-settings {
+    background-color: #f1f1f1;
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#nav-settings button {
+    display: block;
+    color: black;
+    padding: 20px 5px;
+    width: 100%;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    background-color: #e1e1e1;
+}
+
+#nav-settings button:hover {
+    background-color: #aaa;
+}
+
+#nav-settings button.active {
+  background-color: #ccc;
+}
+
+#wallpaper, #language {
+    width: 80%;
+    background-color: #f1f1f1;
+    height: 100%;
+    
+    display: none; 
+    /* turn flex with js */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#wallpaper {
+    display: flex;
+}
+
+.wallpaper-img, .language-img {
+    width: 50%;
+    text-align: center;
+}
+
+
+
+/* ----- App 8 - Version 1 ------- */
+
+
+/* ----- App 9 - Rating ------- */
+
+#thank-you-msg {
+    display: none;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#sent-msg {
+    display: none;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    color: green;
+}
+
+#rating-form {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+#rating-star {
+    width: 48%;
+    margin: 0 auto;
+    border-right: 1px solid black;
+    font-size: 1.5em;
+}
+
+#rating-star input {
+    display: none;
+}
+
+#rating-star span {
+    color: yellow;
+}
+
+#rating-star span:hover {
+    cursor: pointer;
+}
+
+[id^="change-form"] {
+    color: black !important;
+}
+
+[id^="change-form"]:hover {
+    cursor: auto !important;
+}
+
+#rating-advice {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+#user-advice {
+    width: 80%;
+    height: 60px;
+    font-size: 16px;
+    margin: auto;
+}
+
+#sendbutton {
+    width: 40%;
+    margin: auto;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px
+}
+
+
+
+/* ----- Apps - back color ------- */
+
+#app-box-number2, #app-box-number4, #app-box-number6, #app-box-number8 {
+    background-color: #f3aa44;
+}
+
+#app-box-number1, #app-box-number3, #app-box-number5, #app-box-number7, #app-box-number9 {
+    background-color: dodgerblue;
+}
+
+
+
+/* ====================== Animations ======================== */
+
+
+@keyframes moveIcon {
+    33% {
+       transform: rotate(-5deg); 
+    }
+    100% {
+       transform: rotate(5deg); 
+    }
+}
+
+@keyframes hideIcon {
+    100% {
+       transform: rotateY(-180deg) scale(0); 
+    }
+}
+
+@keyframes showIcon {
+    0% {
+        transform: scale(0.01)
+        rotateY(-180deg) ; 
+    }
+    100% {
+        transform: scale(1) rotateY(0deg) ; 
+    }
+}
+
+@keyframes showBox {
+    0% {
+        transform: scale(0.01) rotateY(-180deg)
+    }
+    100% {
+        transform: scale(1) rotateY(0deg) ; 
+    }
+}
+
+@keyframes hideBox {
+    100% {
+        transform: scale(0.01) rotateY(180deg) ; 
+    }
+}
+
+
+
+
+
+
+/* ===================== Responsive  ===================== */
+
+@media (max-width: 955px) {
+    
+    /* ========= App box ========== */
+    
+    [id^="app-box-number"] {
+        width: 400px;
+        height: 400px;
+    }  
+    
+    [id^="app-box-number"] img {
+        max-width: 360px;
+        max-height: 240px;
+    }
+    
+    /* ----- App 1 - Video ----- */
+    
+    #scratch-video {
+        width: 360px;
+        height: 240px;
+    }
+    
+    /* ----- App 3 - Weather ----- */
+    
+    #weather {
+        font-size: 0.8em;
+    }
+    
+    #weather-cloud, #weather-cloud2 {
+        max-height: 50px;
+    }
+    
+    /* ----- App 5 - Conditions ----- */
+    
+    #answer-bloc, #question-bloc {
+        height: 300px;
+    }
+    
+    #bubble {
+        height: 80px;
+    }
+    
+    #answer {
+        margin-top: 60px;
+        margin-right: 35px;
+        width: 75px;
+        height: 120px;
+    }
+    
+    /* ----- App 7 - Setting ----- */
+    
+    #settings {
+        height: 250px
+    }
+    
+    #nav-settings button {
+        font-size: 0.8em;
+    }
+    
+    /* ----- App 9 - Rating ----- */
+    
+    #rating-star, #user-advice {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 785px) {
+    
+    /* ========= Global ========== */
+        
+    #smartphone {
+        width: 100%;
+    }
+    
+    /* ========= App box ========== */
+    
+    #opened-app {
+        width: 100%;
+    }
+}
+
+@media (max-width: 485px) {
+    
+    /* ========= App box ========== */
+    
+    [id^="app-box-number"] {
+        width: 300px;
+        height: 300px;
+    }  
+    
+    [id^="app-box-number"] img {
+        max-width: 240px;
+        max-height: 160px;
+    }
+    
+    [id^="app-box-number"] h2 {
+        margin: 5px 0 0 10px;
+        font-size: 1.1em;
+    }
+    
+    /* ----- App 1 - Video ----- */
+    
+    #scratch-video {
+        width: 240px;
+        height: 160px;
+    }
+    
+    /* ----- App 3 - Weather ----- */
+    
+    .speed {
+        display: none;
+    }
+    
+    /* ----- App 5 - Conditions ----- */
+    
+    #answer-bloc, #question-bloc {
+        height: 250px;
+    }
+    
+    #bubble {
+        height: 60px;
+    }
+    
+    #answer {
+        margin-top: 50px;
+        margin-right: 25px;
+        width: 65px;
+        height: 80px;
+        font-size: 1.1em !important;
+    }
+    
+    /* ----- App 7 - Setting ----- */
+    
+    #settings {
+        height: 200px
+    }
+
+    #nav-settings button {
+        font-size: 0.6em;
+    }
+    
+    #settings img {   
+        max-width: 60px;
+        max-height: 60px;   
+    }
+    
+    /* ----- App 9 - Rating ----- */
+    
+    #rating-star, #user-advice {
+        font-size: 0.9em;
+    }
+    
+}
+

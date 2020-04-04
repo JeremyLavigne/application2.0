@@ -1,1 +1,488 @@
 <!-- Home page -->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Spontaneous application to a web developer position"
+        />
+
+        <title>Application</title>
+        
+        <link rel="stylesheet" href="css/index2.css">
+        
+        <!-- Fontawesome Icons -->
+        <link rel="stylesheet" href="css/css/all.css"> 
+        
+        <!-- Use of EmailJs plateform to receive message via the contact form without using backend -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script>
+            (function(){
+                emailjs.init("user_kGCbguYyMwED8htBgBu7M");
+            })();
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <header>
+            <h1 id="title">Jeremy Lavigne, Front-end Developer</h1>
+        </header>
+      
+        <main id="main">
+                
+            <section id="opened-app">  
+                
+                <div id="app-box-number1">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app1-title">Video - Resume</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <video id="scratch-video" controls muted>
+                        <source src="video/movie.mp4" type="video/mp4">
+                        <source src="video/movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="bottom-skills">
+                        <p><a href="https://scratch.mit.edu" target="_blank">Scratch</a></p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number2">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app2-title">Website - Survey / FAQ / Form</h2>
+                    
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+   
+                    <p class="contain-img">
+                        Coming as soon as possible ;)
+                        <a href="#" target="_blank">
+                            <img src="#" alt="Coming soon">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>ReactJS</p>
+                    </div>
+                    
+                </div><!-- TO DO -->
+                
+                <div id="app-box-number3">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app3-title">Weather</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <div id="weather">
+                        
+                        <h3 id="weather-name"></h3>
+                        
+                        <div id="stockholm-weather">
+                            
+                            <div id="today-weather">
+
+                                <h3 id="today-title">Today</h3>
+
+                                <p><span id="change-weather1">Current temperature : </span><span id="weather-temp"></span>
+                                </p>
+                              
+                                <p class="speed"><span id="change-weather2">Wind speed : </span>
+                                <span id="weather-wind"></span>
+                                </p>
+
+                                <img id="weather-cloud" src="#" alt="weather-icon">
+
+                            </div>
+
+                            <div id="tommorow-weather">
+
+                                <h3 id="tomorrow-title">Tomorrow</h3>
+
+                                <p><span id="change-weather3">Expected temperature : </span><span id="weather-temp2"></span>
+                                </p>
+                                
+                                <p class="speed"><span id="change-weather4">Wind speed : </span>
+                                <span id="weather-wind2"></span>
+                                </p>
+
+                                <img id="weather-cloud2" src="#" alt="weather-icon2">
+
+                            </div>
+                    
+                        </div>    
+                        
+                    </div>
+                    
+                    <div class="bottom-skills">
+                        <p>API Doc</p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number4">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app4-title">Game - Test your Memory</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <p class="contain-img">
+                        <a href="memo-game/memo.html" target="_blank">
+                            <img src="images/apps/labyrinth.png" alt="memo-game-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>Javascript</p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number5">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app5-title">Conditions</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <div id="interview">
+                    
+                        <div id="question-bloc">
+                            
+                            <div id="bubble"></div>
+                            
+                        </div>
+                        
+                        <div id="answer-bloc">
+                        
+                            <p id="answer"></p>
+                            
+                        </div>
+                        
+                    </div>
+                     
+                </div>
+                
+                <div id="app-box-number6">
+                    
+                    <div class="header-box">
+                         
+                        <h2 id="app6-title">Game - Make a pizza</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <p class="contain-img">
+                        <a href="react-pizza/build/index.html" target="_blank">
+                            <img src="images/apps/pizza-maker.png" alt="pizza-game-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>React App</p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number7">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app7-title">Settings</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <div id="settings">
+                        
+                        <div id="nav-settings">
+                            
+                            <button id="wallpaper-btn" class=" active">Wallpaper</button>
+                            
+                            <button id="language-btn" class="">Language</button>
+                            
+                        </div>
+
+                        <div id="wallpaper">
+                            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm1" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm1"><img src="images/screen/stockholm1.jpg" alt="stockholm1"></label>
+                            </div>
+            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm2" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm2"><img src="images/screen/stockholm2.jpg" alt="stockholm2"></label>
+                            </div>
+                
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm3" name="stockholm">
+
+                                <br>
+
+                                <label for="stockholm3"><img src="images/screen/stockholm3.jpg" alt="stockholm3"></label>
+                            </div>
+            
+                            <div class="wallpaper-img">
+                                <input type="radio" id="stockholm4" name="stockholm" checked>
+
+                                <br>
+
+                                <label for="stockholm4"><img src="images/screen/stockholm4.jpg" alt="stockholm4"></label>
+                            </div>
+                            
+                        </div>
+
+                        <div id="language">
+                            
+                            <div class="language-img">
+                                <input type="radio" id="english-flag" name="flag" checked>
+
+                                <br>
+
+                                <label for="english-flag"><img src="images/screen/english-flag.jpg" alt="english-flag"></label>
+                            </div>
+                
+                            <div class="language-img">
+                                <input type="radio" id="swedish-flag" name="flag">
+
+                                <br>
+
+                                <label for="swedish-flag"><img src="images/screen/swedish-flag.png" alt="swedish-flag"></label>
+                            </div>
+            
+                            <div class="language-img">
+                                <input type="radio" id="french-flag" name="flag">
+
+                                <br>
+
+                                <label for="french-flag"><img src="images/screen/french-flag.png" alt="french-flag"></label>
+                            </div>
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="bottom-skills">
+                        <p>Javascript</p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number8">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app8-title">Website - Version 1</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <p class="contain-img">
+                        <a href="version-1/indexv1.html" target="_blank">
+                            <img src="images/apps/overview-website-v1.png" alt="website-v1-img">
+                        </a>
+                    </p>
+                    
+                    <div class="bottom-skills">
+                        <p>HTML/CSS/JS</p>
+                    </div>
+                    
+                </div>
+                
+                <div id="app-box-number9">
+                    
+                    <div class="header-box">
+                        
+                        <h2 id="app9-title">Rate this website</h2>
+                        
+                        <button class="close-btn">x</button>
+                        
+                    </div>
+                    
+                    <p id="thank-you-msg"> Thank you very much ;)</p>
+                    <p id="sent-msg"> &#10004; </p>
+                    
+                    <form id="rating-form">
+                        
+                        <div id="rating-star">
+                            
+                            <p><span id="change-form1">Idea</span>
+                                <input type="text" id="idea-rating" name="idea-rating">
+                                <span id="idea-star1">&#9734;</span>
+                                <span id="idea-star2">&#9734;</span>
+                                <span id="idea-star3">&#9734;</span>
+                                <span id="idea-star4">&#9734;</span>
+                                <span id="idea-star5">&#9734;</span>
+                            </p>
+                            
+                            <p><span id="change-form2">Design</span>
+                                <input type="text" id="design-rating" name="design-rating">
+                                <span id="design-star1">&#9734;</span>
+                                <span id="design-star2">&#9734;</span>
+                                <span id="design-star3">&#9734;</span>
+                                <span id="design-star4">&#9734;</span>
+                                <span id="design-star5">&#9734;</span>
+                            </p>
+                            
+                            <p><span id="change-form3">Skills</span> 
+                                <input type="text" id="skills-rating" name="skills-rating">
+                                <span id="skills-star1">&#9734;</span>
+                                <span id="skills-star2">&#9734;</span>
+                                <span id="skills-star3">&#9734;</span>
+                                <span id="skills-star4">&#9734;</span>
+                                <span id="skills-star5">&#9734;</span>
+                            </p>
+                            
+                        </div>
+                        
+                        <div id="rating-advice">
+                            
+                            <textarea type="text" id="user-advice" name="user-advice" placeholder="Any advice? (optional)" maxlength="255"></textarea>
+                            
+                            <br><br>
+                            
+                            <button type="submit" id="sendbutton">Send</button>
+                            
+                        </div>
+                        
+                    </form>
+                    
+                    <div class="bottom-skills">
+                        <p>EmailJS</p>
+                    </div>
+                    
+                </div>
+                    
+            </section>
+                
+            <section id="smartphone">
+                    
+                <div id="smartphone-screen">
+
+                    <div id="app-top-bloc">
+
+                        <div id="app-number1">
+                            
+                        </div>
+                        
+                        <div id="app-number2">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        
+                        <div id="app-number3">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        
+                        <div id="app-number4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        
+                        <div id="app-number5">
+                            <i class="fas fa-comment-dollar"></i>
+                        </div>
+                        
+                        <div id="app-number6">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        
+                        <div id="app-number7">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        
+                        <div id="app-number8">
+                            <i class="fas fa-backward"></i>
+                        </div>
+                        
+                        <div id="app-number9">
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+
+                    </div>
+
+                    <div id="app-bottom-bloc">
+
+                        <a id="link-number1" href="https://github.com/JeremyLavigne/application2.0" target="_blank">
+                            <i class="fab fa-github-square"></i>
+                        </a>
+                        
+                        <a id="link-number2" href="http://www.linkedin.com/in/jérémy-lavigne-33577a177" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        
+                        <div id="link-number3">
+                            
+                            <div id="id-card">
+                                <p id="change-id1">Name : Jeremy Lavigne</p>
+                                <p id="change-id2">Age : 30</p>
+                                <p id="change-id3">French,</p>
+                                <p id="change-id4">Settled in Stockholm since 2019</p>
+                            </div>
+                            
+                            <i class="fas fa-id-card"></i>
+                            
+                        </div>
+                        
+                        <a id="link-number4" href="mailto:lavigne.jeremy@yahoo.fr">
+                            <i class="fas fa-envelope-open"></i>
+                        </a>
+
+                    </div>
+                        
+                </div>
+                
+            </section>                  
+            
+        </main>
+        
+        <footer>
+            <p><span id="change-footer1">Images from</span> <a href="www.pixabay.com"> Pixabay </a></p>
+            
+            <p><span id="change-footer2">Build by</span> Jeremy Lavigne</p>
+            
+            <p><span id="change-footer3">Icons from</span> <a href="www.fontawesome.com"> Fontawesome </a></p>
+        </footer>
+        
+        <script src="js/index2.js"></script>
+    </body>
+    
+</html>

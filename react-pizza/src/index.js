@@ -241,7 +241,7 @@ class Game extends React.Component {
           orderCheck: false,
           loseGame: false,
           startGame: false,
-          timer: 30,
+          timer: 45,
           interval: {},
           timeOver: false,
           bestScore: 0
@@ -368,7 +368,7 @@ class Game extends React.Component {
                   orderCheck: false,
                   loseGame: false,
                   startGame: false,
-                  timer: 30,
+                  timer: 45,
                   interval: {},
                   timeOver: false
                   });
@@ -399,7 +399,7 @@ class Game extends React.Component {
         
                     <h2>Order</h2>
         
-                    <div className="empty-bloc">   
+                    <div className="empty-bloc1">   
         
                       <Dough
                         sauce={this.state.order[0]}
@@ -416,7 +416,7 @@ class Game extends React.Component {
                     
                 </div>
                     
-                <div>
+                <div className="rules-bloc">
                         
                     <Rules 
                         loseGame={this.state.loseGame}
@@ -430,7 +430,7 @@ class Game extends React.Component {
                     
                     <h2>Preparation</h2> 
                 
-                    <div className="empty-bloc">
+                    <div className="empty-bloc2">
                         
                       <Dough
                         sauce={this.state.preparation[0]}

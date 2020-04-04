@@ -1,4 +1,7 @@
-/* Memo-game css file */
+/* ===================== Memo-game css file ============================= */
+
+
+/* --------------------- page structure ----------------------- */
 
 body {
     margin: 0;
@@ -16,7 +19,7 @@ header, footer {
     text-align: center;
 }
 
-header p, footer p {
+header p, footer p { 
     color: white;
     width: 80%;
     margin: auto;
@@ -30,7 +33,10 @@ main {
     padding: 10px;
 }
 
-/* ================ */
+
+
+
+/* ===================== Around Game bloc ======================= */
 
 #infos-top {
     display: flex;
@@ -55,9 +61,21 @@ main {
     height: 40px;
     font-size: 1.1em;
     color: white;
+    cursor: pointer;
 }
 
-/* ================ */
+#infos-bottom {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    color: #20299e;
+    font-size: 1.3em;
+}
+
+
+
+
+/* ====================== Game bloc ========================= */
 
 #game-bloc {
     display: flex;
@@ -74,13 +92,16 @@ main {
     font-size: 1.1em;
 }
 
+
+/* --------------------- Instructions ----------------------- */
+
 #letters-bloc {
     width: 55%;
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border: 5px solid #a8a6a4;
+    border: 5px solid rgba(0,0,0,0);
     border-radius: 50px;
 }
 
@@ -91,7 +112,9 @@ main {
     text-align: center;
 }
 
-/* -------- */
+
+
+/* --------------------- Instructions ----------------------- */
 
 #ready-memorize-btn {
     margin: auto;
@@ -103,10 +126,6 @@ main {
     display: none;
 }
 
-#just-type {
-    display: none;
-}
-
 #user-input {
     background-color: white;
     border: 2px solid #a8a6a4;
@@ -115,10 +134,13 @@ main {
     padding-left: 5px;
 }
 
-/* -------- */
+
+
+/* ------------------------ Messages ------------------------- */
+
 
 #welcome-msg, #continue-msg, #concentration-msg, #success-msg, #defeat-msg, #good-letter-msg, #answer-msg, #ultimate-win-msg {
-    display: block;
+    display: none;
     background-color: #e6e2d7;
     box-shadow: 5px 5px #b9b7b5;
     border: #848281;
@@ -140,43 +162,45 @@ main {
     display: block;
 }
 
-#continue-msg, #concentration-msg, #success-msg, #defeat-msg, #good-letter-msg, #answer-msg, #ultimate-win-msg {
-    display: none;
-}
-
 #answer-msg-letters {
     color: #4eaed2;
 }
 
-/* -------- */
 
-#infos-bottom {
-    display: flex;
-    margin: auto;
-    text-align: center;
-    color: #20299e;
-    font-size: 1.3em;
-}
 
-/* ================ */
+
+
+/* ========================= Responsive =========================== */
 
 
 @media (max-width : 600px) {
+    
+    body {
+        background-image: url(images/labyrinth3.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
     #game-bloc {
         width: 95%;
         flex-direction: column;
         margin: auto;
         align-items: center;
     }
+    
     #letters-bloc {
         width: 95%;
         margin-top: 10px;
     }
+    
     #message, #instructions {
         width: 55%;
         margin-top: 10px;
     }
+    
     [id^=box] {
         height: 100px;
     }
 }
+
