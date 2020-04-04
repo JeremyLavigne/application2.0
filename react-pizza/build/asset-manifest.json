@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-pizza/build/static/css/main.ca55f5ad.chunk.css",
+    "main.js": "/react-pizza/build/static/js/main.ba7ce747.chunk.js",
+    "main.js.map": "/react-pizza/build/static/js/main.ba7ce747.chunk.js.map",
+    "runtime-main.js": "/react-pizza/build/static/js/runtime-main.600501b2.js",
+    "runtime-main.js.map": "/react-pizza/build/static/js/runtime-main.600501b2.js.map",
+    "static/js/2.729b6339.chunk.js": "/react-pizza/build/static/js/2.729b6339.chunk.js",
+    "static/js/2.729b6339.chunk.js.map": "/react-pizza/build/static/js/2.729b6339.chunk.js.map",
+    "index.html": "/react-pizza/build/index.html",
+    "precache-manifest.36715322b41e665d6e24be4dd5d2be3b.js": "/react-pizza/build/precache-manifest.36715322b41e665d6e24be4dd5d2be3b.js",
+    "service-worker.js": "/react-pizza/build/service-worker.js",
+    "static/css/main.ca55f5ad.chunk.css.map": "/react-pizza/build/static/css/main.ca55f5ad.chunk.css.map",
+    "static/js/2.729b6339.chunk.js.LICENSE.txt": "/react-pizza/build/static/js/2.729b6339.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/react-pizza/build/static/media/wood.19c84430.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.600501b2.js",
+    "static/js/2.729b6339.chunk.js",
+    "static/css/main.ca55f5ad.chunk.css",
+    "static/js/main.ba7ce747.chunk.js"
+  ]
+}

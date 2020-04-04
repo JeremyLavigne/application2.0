@@ -6,7 +6,7 @@
 
 /* ================== Main js file ============= */
 
-
+ 
 
 
 /* ------ Initializing -------- */
@@ -127,13 +127,18 @@ function everywhereExceptHere(e) {
     var target = e.target;
     var activeBox = document.getElementById(activeBoxId);
    
-    /* Cancel if click is on the box or on one of his children : not so good, but no better idea than test all levels of parent node */
-    
-    while (target.id !== "main") {
-        if (target === activeBox) {
-            return;
-        } else {
-            target = target.parentElement;
+    if (e.target.className === "close-btn") {
+        // Go out if close button clicked
+    } else {
+        
+        /* Cancel if click is on the box or on one of his children : not so good, but no better idea than test all levels of parent node */
+        
+        while (target.id !== "main") {
+            if (target === activeBox) {
+                return;
+            } else {
+                target = target.parentElement;
+            }
         }
     }
     
@@ -236,7 +241,40 @@ function isTinyVueWhenBoxOpened() {
 
 
 
+
+
+
 /* ======================== App js code ========================== */
+
+
+/* --------- Link number 3 - Id card --------------- */
+
+
+// :hover on link-number3 -> display id card 
+
+var idCardOpen = false;
+
+document.getElementById("link-number3").addEventListener("mouseover", function() {
+    document.getElementById("id-card").style.display = "block";
+    idCardOpen = true;
+});
+
+document.getElementById("link-number3").addEventListener("mouseout", function() {
+    document.getElementById("id-card").style.display = "none";
+    idCardOpen = false;
+});
+
+//Issue on mobile with :hover -> ID card appears when you click on and do not disappears. So add a click event
+
+document.getElementById("link-number3").addEventListener("click", function() {
+    if (!idCardOpen) {
+        idCardOpen = true;
+        document.getElementById("id-card").style.display = "block";
+    } else {
+        idCardOpen = false;
+        document.getElementById("id-card").style.display = "none";
+    }
+});
 
 
 /* --------- App number 1 - Video --------------- */

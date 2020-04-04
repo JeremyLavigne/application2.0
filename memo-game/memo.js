@@ -2,12 +2,12 @@
 /* eslint-env browser */
 
 
-/* =============== Memo-game js file ================== */
-// ======================================================
+/* =============== Memo-game js file ======================== */
+// ============================================================
+ 
 
 
-
-/* Global variables */
+/* -------------------- Global variables ------------------- */
 
 var level = 1;
 var bestLevel = 1;
@@ -17,7 +17,10 @@ var timeToMemorize = 4800; // Time to display 3 letters on level 1
 
 
 
-/* ========== Course of game  =============== */
+
+
+/* =================== Course of game  ======================== */
+
 
 document.getElementById("ready-memorize-btn").addEventListener('click', function(){
 
@@ -40,13 +43,16 @@ document.getElementById("ready-memorize-btn").addEventListener('click', function
     }, timeToMemorize);
 });
 
-/* ------- New Game ------ */
+
+
+/* --------------------- New Game --------------------------- */
 
 document.getElementById("new-game-btn").addEventListener('click', function(){
 
     cleanArrays();
     cleanEventKeyboard();
     cleanMessages();
+    unblockInput();
     
     welcomeMsg();
     
@@ -54,9 +60,15 @@ document.getElementById("new-game-btn").addEventListener('click', function(){
     updateInfos();
 });
 
-/* ========== functions =============== */
 
-/* ------ Display letters -------- */
+
+
+
+/* ======================== Functions =========================== */
+
+
+/* ------------------- Display letters ------------------------- */
+
 
 function generateLetters(level) {
     
@@ -103,11 +115,12 @@ function showThisLetter(id, content, time) {
 }
 
 
-/* ------ user keyboard input -------- */
+
+/* ------------------ user keyboard input ------------------ */
 
 function waitForUserInput(event) {
             
-    var userLetter = String.fromCharCode(event.charCode);
+    var userLetter = (String.fromCharCode(event.charCode)).toLowerCase();
     userLetters.push(userLetter);
     event.stopImmediatePropagation();
     
@@ -119,7 +132,9 @@ function waitForUserInput(event) {
 }
 
 
-/* ------ Success / Defeat -------- */
+
+
+/* ------------------ Success / Defeat --------------------- */
 
 function ifSuccess() {
     
@@ -175,6 +190,7 @@ function ifDefeat() {
         showAnswer();
         cleanEventKeyboard();
         removeGoForIt();
+        blockInput();
     }
     else {
         return;
@@ -213,7 +229,9 @@ function ifUltimateWin() {
 }
 
 
-/* ------ Informations -------- */
+
+
+/* -------------------------- Informations --------------------- */
 
 function waitForIt() {
     
@@ -232,7 +250,7 @@ function goForIt() {
 function removeGoForIt() {
     
     document.getElementById("go-for-it").style.display = "none"; 
-    document.getElementById("just-type").style.display = "none"; 
+    //document.getElementById("just-type").style.display = "none"; 
     
 }
 
@@ -258,9 +276,16 @@ function prepareInput() {
 
 function showInput(userLetter) {
     
-    document.getElementById("user-input-letter").textContent += userLetter + " - ";
+    var input = document.getElementById("user-input");
     
-}
+    if (focusInput) {
+        setTimeout(function() {
+            input.value += " - ";
+        }, 10);
+    } else {
+        input.value += userLetter + " - ";
+    }
+} 
 
 function showAnswer() {
     
@@ -277,7 +302,8 @@ function showAnswer() {
 }
 
 
-/* ------ Level / Record -------- */
+
+/* ------------------------ Level / Record -------------------- */
 
 function updateInfos() {
     
@@ -293,7 +319,8 @@ function improvedRecord() {
 }
 
 
-/* ------ Re-initialize -------- */
+
+/* -------------------- Re-initialize ----------------------- */
 
 function cleanArrays() {
     
@@ -306,10 +333,11 @@ function cleanMessages() {
     
     readyToMemorizeBtn();
     
-    document.getElementById("user-input-letter").innerHTML = "";
+    document.getElementById("user-input").value = "";
     document.getElementById("answer-msg-letters").innerHTML = "";
 
     document.getElementById("continue-msg").style.display = "none"; 
+    document.getElementById("go-for-it").style.display = "none"; 
 }
 
 function cleanEventKeyboard() {
@@ -318,8 +346,20 @@ function cleanEventKeyboard() {
     
 }
 
+function blockInput() {
+    document.getElementById("user-input").setAttribute("disabled", "disabled");
+    document.getElementById("user-input").blur();
+}
 
-/* ------- Messages ------- */
+function unblockInput() {
+    document.getElementById("user-input").removeAttribute("disabled");
+}
+
+
+
+
+/* ----------------------- Messages ----------------------- */
+
 
 function welcomeMsg() {
     
@@ -381,36 +421,34 @@ function ultimateWinMsg() {
     document.getElementById("ultimate-win-msg").style.display = "block";     
 }
 
-/* ------- Visual effects ------- */
+
+
+/* ------------------ Visual effects ------------------------ */
+
 
 function addBackground() {
     
     document.getElementById("letters-bloc").style.backgroundColor = "white";
+    document.getElementById("letters-bloc").style.borderColor = "#a8a6a4";
     
 }
 
 function removeBackground() {
     
     document.getElementById("letters-bloc").style.backgroundColor = "rgba(0,0,0,0)";
+    document.getElementById("letters-bloc").style.borderColor = "rgba(0,0,0,0)";
     
 }
 
-/* ------- Text info when user look for a place to type ------- */
 
-document.getElementById("user-input").addEventListener("mouseover", justType);
 
-document.getElementById("user-input").addEventListener("mouseout", removeJustType);
+/* ------- Need to know if there is a focus on input or directly type in keyboard ------- */
 
-function justType() {
-    
-    document.getElementById("go-for-it").style.display = "none"; 
-    document.getElementById("just-type").style.display = "block"; 
-    
-}
+var focusInput = false;
 
-function removeJustType(){
-    
-    document.getElementById("just-type").style.display = "none";
-    document.getElementById("go-for-it").style.display = "block";
-    
-}
+document.getElementById("user-input").addEventListener("focus", function() {
+    focusInput = true;
+});
+document.getElementById("user-input").addEventListener("blur", function() {
+    focusInput = false;
+});
