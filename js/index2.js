@@ -304,7 +304,7 @@ function scriptApp3() {
     // Get datas on api.openweathermap.org
     
 // Today
-ajaxGet("http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=0b0ebfd8043e4d1ca9870164f1abb64e", function (reponse) {
+ajaxGet(("http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=" + API_KEY)  , function (reponse) {
     
     // 
     var infos = JSON.parse(reponse);
@@ -324,7 +324,7 @@ ajaxGet("http://api.openweathermap.org/data/2.5/weather?q=Stockholm&APPID=0b0ebf
 });
 
 // Tomorrow
-ajaxGet("http://api.openweathermap.org/data/2.5/forecast?q=Stockholm&APPID=0b0ebfd8043e4d1ca9870164f1abb64e", function (reponse) {
+ajaxGet(("http://api.openweathermap.org/data/2.5/forecast?q=Stockholm&APPID=" + API_KEY), function (reponse) {
     
     // list[5] = 24h later
     var infos2 = JSON.parse(reponse);

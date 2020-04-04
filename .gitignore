@@ -1,5 +1,8 @@
 react-pizza/node_modules
 react-pizza/src/images
+react-pizza/public
+react-pizza/package-lock.json
+react-pizza/package.json
 memo-game/images
 images
 css/css
@@ -7,3 +10,4 @@ css/webfonts
 version-1
 video
 .htaccess
+js/config.js
